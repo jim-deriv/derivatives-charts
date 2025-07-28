@@ -139,7 +139,8 @@ class TradingTimes {
                         delay_amount,
                         times,
                         trading_days,
-                        symbol,
+                    // @ts-expect-error - this will be resolved after underlying_symbol is added to the type
+                        underlying_symbol: symbol,
                     } = symbolObj as TTradingTimesSymbol;
                     const { open, close } = times;
                     let isClosedToday = false;
@@ -233,9 +234,8 @@ class TradingTimes {
         }
         return this._tradingTimesMap[symbol]?.feed_license === TradingTimes.FEED_UNAVAILABLE;
     }
-    getDelayedMinutes(): number {
-        // return this._tradingTimesMap?.[symbol].delay_amount as number;
-        return 0;
+    getDelayedMinutes(symbol: string): number {
+        return this._tradingTimesMap?.[symbol].delay_amount as number;
     }
     isMarketOpened(symbol: string) {
         if (!this._tradingTimesMap) {
