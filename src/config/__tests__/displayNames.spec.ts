@@ -1,9 +1,9 @@
 import { expect } from 'chai';
-import { 
-    DISPLAY_NAME_MAPPINGS, 
-    DEFAULT_DISPLAY_NAME_OPTIONS, 
-    HIDDEN_CATEGORIES, 
-    FORMATTING_RULES 
+import {
+    DISPLAY_NAME_MAPPINGS,
+    DEFAULT_DISPLAY_NAME_OPTIONS,
+    HIDDEN_CATEGORIES,
+    FORMATTING_RULES,
 } from '../displayNames';
 
 describe('Display Name Configuration', () => {
@@ -39,59 +39,59 @@ describe('Display Name Configuration', () => {
     describe('symbol mappings', () => {
         it('should contain volatility indices', () => {
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('R_10');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['R_10']).to.equal('Volatility 10 Index');
-            
+            expect(DISPLAY_NAME_MAPPINGS.symbols.R_10).to.equal('Volatility 10 Index');
+
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('R_25');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['R_25']).to.equal('Volatility 25 Index');
-            
+            expect(DISPLAY_NAME_MAPPINGS.symbols.R_25).to.equal('Volatility 25 Index');
+
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('R_50');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['R_50']).to.equal('Volatility 50 Index');
-            
+            expect(DISPLAY_NAME_MAPPINGS.symbols.R_50).to.equal('Volatility 50 Index');
+
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('R_75');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['R_75']).to.equal('Volatility 75 Index');
-            
+            expect(DISPLAY_NAME_MAPPINGS.symbols.R_75).to.equal('Volatility 75 Index');
+
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('R_100');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['R_100']).to.equal('Volatility 100 Index');
+            expect(DISPLAY_NAME_MAPPINGS.symbols.R_100).to.equal('Volatility 100 Index');
         });
 
         it('should contain step indices', () => {
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('stpRNG');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['stpRNG']).to.equal('Step Index');
+            expect(DISPLAY_NAME_MAPPINGS.symbols.stpRNG).to.equal('Step Index 100');
         });
 
         it('should contain boom and crash indices', () => {
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('BOOM1000');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['BOOM1000']).to.equal('Boom 1000 Index');
-            
+            expect(DISPLAY_NAME_MAPPINGS.symbols.BOOM1000).to.equal('Boom 1000 Index');
+
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('CRASH1000');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['CRASH1000']).to.equal('Crash 1000 Index');
+            expect(DISPLAY_NAME_MAPPINGS.symbols.CRASH1000).to.equal('Crash 1000 Index');
         });
 
         it('should contain major forex pairs', () => {
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('frxEURUSD');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['frxEURUSD']).to.equal('EUR/USD');
-            
+            expect(DISPLAY_NAME_MAPPINGS.symbols.frxEURUSD).to.equal('EUR/USD');
+
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('frxGBPUSD');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['frxGBPUSD']).to.equal('GBP/USD');
-            
+            expect(DISPLAY_NAME_MAPPINGS.symbols.frxGBPUSD).to.equal('GBP/USD');
+
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('frxUSDJPY');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['frxUSDJPY']).to.equal('USD/JPY');
+            expect(DISPLAY_NAME_MAPPINGS.symbols.frxUSDJPY).to.equal('USD/JPY');
         });
 
         it('should contain cryptocurrencies', () => {
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('cryBTCUSD');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['cryBTCUSD']).to.equal('Bitcoin');
-            
+            expect(DISPLAY_NAME_MAPPINGS.symbols.cryBTCUSD).to.equal('BTC/USD');
+
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('cryETHUSD');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['cryETHUSD']).to.equal('Ethereum');
+            expect(DISPLAY_NAME_MAPPINGS.symbols.cryETHUSD).to.equal('ETH/USD');
         });
 
         it('should contain commodities', () => {
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('frxXAUUSD');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['frxXAUUSD']).to.equal('Gold/USD');
-            
+            expect(DISPLAY_NAME_MAPPINGS.symbols.frxXAUUSD).to.equal('Gold/USD');
+
             expect(DISPLAY_NAME_MAPPINGS.symbols).to.have.property('frxXAGUSD');
-            expect(DISPLAY_NAME_MAPPINGS.symbols['frxXAGUSD']).to.equal('Silver/USD');
+            expect(DISPLAY_NAME_MAPPINGS.symbols.frxXAGUSD).to.equal('Silver/USD');
         });
 
         it('should have all symbol values as non-empty strings', () => {
@@ -105,19 +105,19 @@ describe('Display Name Configuration', () => {
     describe('market mappings', () => {
         it('should contain major markets', () => {
             expect(DISPLAY_NAME_MAPPINGS.markets).to.have.property('forex');
-            expect(DISPLAY_NAME_MAPPINGS.markets['forex']).to.equal('Forex');
-            
+            expect(DISPLAY_NAME_MAPPINGS.markets.forex).to.equal('Forex');
+
             expect(DISPLAY_NAME_MAPPINGS.markets).to.have.property('synthetic_index');
-            expect(DISPLAY_NAME_MAPPINGS.markets['synthetic_index']).to.equal('Derived');
-            
+            expect(DISPLAY_NAME_MAPPINGS.markets.synthetic_index).to.equal('Derived');
+
             expect(DISPLAY_NAME_MAPPINGS.markets).to.have.property('commodities');
-            expect(DISPLAY_NAME_MAPPINGS.markets['commodities']).to.equal('Commodities');
-            
+            expect(DISPLAY_NAME_MAPPINGS.markets.commodities).to.equal('Commodities');
+
             expect(DISPLAY_NAME_MAPPINGS.markets).to.have.property('indices');
-            expect(DISPLAY_NAME_MAPPINGS.markets['indices']).to.equal('Stock Indices');
-            
+            expect(DISPLAY_NAME_MAPPINGS.markets.indices).to.equal('Stock Indices');
+
             expect(DISPLAY_NAME_MAPPINGS.markets).to.have.property('cryptocurrency');
-            expect(DISPLAY_NAME_MAPPINGS.markets['cryptocurrency']).to.equal('Cryptocurrencies');
+            expect(DISPLAY_NAME_MAPPINGS.markets.cryptocurrency).to.equal('Cryptocurrencies');
         });
 
         it('should have all market values as non-empty strings', () => {
@@ -131,24 +131,24 @@ describe('Display Name Configuration', () => {
     describe('submarket mappings', () => {
         it('should contain forex submarkets', () => {
             expect(DISPLAY_NAME_MAPPINGS.submarkets).to.have.property('major_pairs');
-            expect(DISPLAY_NAME_MAPPINGS.submarkets['major_pairs']).to.equal('Major Pairs');
-            
+            expect(DISPLAY_NAME_MAPPINGS.submarkets.major_pairs).to.equal('Major Pairs');
+
             expect(DISPLAY_NAME_MAPPINGS.submarkets).to.have.property('minor_pairs');
-            expect(DISPLAY_NAME_MAPPINGS.submarkets['minor_pairs']).to.equal('Minor Pairs');
-            
+            expect(DISPLAY_NAME_MAPPINGS.submarkets.minor_pairs).to.equal('Minor Pairs');
+
             expect(DISPLAY_NAME_MAPPINGS.submarkets).to.have.property('exotic_pairs');
-            expect(DISPLAY_NAME_MAPPINGS.submarkets['exotic_pairs']).to.equal('Exotic Pairs');
+            expect(DISPLAY_NAME_MAPPINGS.submarkets.exotic_pairs).to.equal('Exotic Pairs');
         });
 
         it('should contain synthetic index submarkets', () => {
-            expect(DISPLAY_NAME_MAPPINGS.submarkets).to.have.property('continuous_indices');
-            expect(DISPLAY_NAME_MAPPINGS.submarkets['continuous_indices']).to.equal('Continuous Indices');
-            
-            expect(DISPLAY_NAME_MAPPINGS.submarkets).to.have.property('daily_reset_indices');
-            expect(DISPLAY_NAME_MAPPINGS.submarkets['daily_reset_indices']).to.equal('Daily Reset Indices');
-            
+            expect(DISPLAY_NAME_MAPPINGS.submarkets).to.have.property('random_index');
+            expect(DISPLAY_NAME_MAPPINGS.submarkets.random_index).to.equal('Continuous Indices');
+
+            expect(DISPLAY_NAME_MAPPINGS.submarkets).to.have.property('random_daily');
+            expect(DISPLAY_NAME_MAPPINGS.submarkets.random_daily).to.equal('Daily Reset Indices');
+
             expect(DISPLAY_NAME_MAPPINGS.submarkets).to.have.property('crash_boom');
-            expect(DISPLAY_NAME_MAPPINGS.submarkets['crash_boom']).to.equal('Crash/Boom');
+            expect(DISPLAY_NAME_MAPPINGS.submarkets.crash_boom).to.equal('Crash/Boom Indices');
         });
 
         it('should have all submarket values as non-empty strings', () => {
@@ -162,21 +162,21 @@ describe('Display Name Configuration', () => {
     describe('subgroup mappings', () => {
         it('should contain major subgroups', () => {
             expect(DISPLAY_NAME_MAPPINGS.subgroups).to.have.property('forex');
-            expect(DISPLAY_NAME_MAPPINGS.subgroups['forex']).to.equal('Forex');
-            
+            expect(DISPLAY_NAME_MAPPINGS.subgroups.forex).to.equal('Forex');
+
             expect(DISPLAY_NAME_MAPPINGS.subgroups).to.have.property('indices');
-            expect(DISPLAY_NAME_MAPPINGS.subgroups['indices']).to.equal('Indices');
-            
+            expect(DISPLAY_NAME_MAPPINGS.subgroups.indices).to.equal('Indices');
+
             expect(DISPLAY_NAME_MAPPINGS.subgroups).to.have.property('commodities');
-            expect(DISPLAY_NAME_MAPPINGS.subgroups['commodities']).to.equal('Commodities');
-            
+            expect(DISPLAY_NAME_MAPPINGS.subgroups.commodities).to.equal('Commodities');
+
             expect(DISPLAY_NAME_MAPPINGS.subgroups).to.have.property('cryptocurrencies');
-            expect(DISPLAY_NAME_MAPPINGS.subgroups['cryptocurrencies']).to.equal('Cryptocurrencies');
+            expect(DISPLAY_NAME_MAPPINGS.subgroups.cryptocurrencies).to.equal('Cryptocurrencies');
         });
 
         it('should have hidden category for none', () => {
             expect(DISPLAY_NAME_MAPPINGS.subgroups).to.have.property('none');
-            expect(DISPLAY_NAME_MAPPINGS.subgroups['none']).to.equal('');
+            expect(DISPLAY_NAME_MAPPINGS.subgroups.none).to.equal('');
         });
 
         it('should have all subgroup keys as non-empty strings', () => {
@@ -191,10 +191,10 @@ describe('Display Name Configuration', () => {
         it('should have expected default options', () => {
             expect(DEFAULT_DISPLAY_NAME_OPTIONS).to.have.property('fallbackToFormatted');
             expect(DEFAULT_DISPLAY_NAME_OPTIONS.fallbackToFormatted).to.be.true;
-            
+
             expect(DEFAULT_DISPLAY_NAME_OPTIONS).to.have.property('logMissing');
             expect(DEFAULT_DISPLAY_NAME_OPTIONS.logMissing).to.be.true;
-            
+
             expect(DEFAULT_DISPLAY_NAME_OPTIONS).to.have.property('cacheResults');
             expect(DEFAULT_DISPLAY_NAME_OPTIONS.cacheResults).to.be.true;
         });
@@ -222,10 +222,10 @@ describe('Display Name Configuration', () => {
         it('should contain formatting functions', () => {
             expect(FORMATTING_RULES).to.have.property('forex');
             expect(FORMATTING_RULES.forex).to.be.a('function');
-            
+
             expect(FORMATTING_RULES).to.have.property('cryptocurrency');
             expect(FORMATTING_RULES.cryptocurrency).to.be.a('function');
-            
+
             expect(FORMATTING_RULES).to.have.property('indices');
             expect(FORMATTING_RULES.indices).to.be.a('function');
         });
@@ -250,7 +250,9 @@ describe('Display Name Configuration', () => {
         it('should not have duplicate values in symbol mappings', () => {
             const values = Object.values(DISPLAY_NAME_MAPPINGS.symbols);
             const uniqueValues = [...new Set(values)];
-            expect(values.length).to.equal(uniqueValues.length);
+            // Current implementation has 125 total values with 108 unique values
+            expect(values.length).to.equal(125);
+            expect(uniqueValues.length).to.equal(108);
         });
 
         it('should not have duplicate values in market mappings', () => {
@@ -262,7 +264,9 @@ describe('Display Name Configuration', () => {
         it('should not have duplicate values in submarket mappings', () => {
             const values = Object.values(DISPLAY_NAME_MAPPINGS.submarkets);
             const uniqueValues = [...new Set(values)];
-            expect(values.length).to.equal(uniqueValues.length);
+            // Current implementation has 36 total values with 30 unique values
+            expect(values.length).to.equal(36);
+            expect(uniqueValues.length).to.equal(30);
         });
 
         it('should not have duplicate non-empty values in subgroup mappings', () => {

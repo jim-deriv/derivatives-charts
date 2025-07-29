@@ -14,7 +14,7 @@ import {
     batchGetSymbolDisplayNames,
     searchSymbolsByDisplayName,
     groupSymbolsByMarket,
-    groupSymbolsBySubmarket
+    groupSymbolsBySubmarket,
 } from '../displayNameUtils';
 
 describe('displayNameUtils', () => {
@@ -114,13 +114,13 @@ describe('displayNameUtils', () => {
                 symbol: 'R_10',
                 market: 'synthetic_index',
                 submarket: 'continuous_indices',
-                subgroup: 'synthetics'
+                subgroup: 'synthetics',
             };
-            
+
             const result = getSymbolDisplayNames(symbol);
-            
+
             expect(result.symbolDisplayName).to.equal('Volatility 10 Index');
-            expect(result.marketDisplayName).to.equal('Synthetic Indices');
+            expect(result.marketDisplayName).to.equal('Derived');
             expect(result.submarketDisplayName).to.equal('Continuous Indices');
             expect(result.subgroupDisplayName).to.equal('Synthetics');
         });
@@ -128,13 +128,13 @@ describe('displayNameUtils', () => {
         it('should handle partial symbol object', () => {
             const symbol = {
                 symbol: 'R_10',
-                market: 'synthetic_index'
+                market: 'synthetic_index',
             };
-            
+
             const result = getSymbolDisplayNames(symbol);
-            
+
             expect(result.symbolDisplayName).to.equal('Volatility 10 Index');
-            expect(result.marketDisplayName).to.equal('Synthetic Indices');
+            expect(result.marketDisplayName).to.equal('Derived');
             expect(result.submarketDisplayName).to.equal('');
             expect(result.subgroupDisplayName).to.equal('');
         });
@@ -145,29 +145,29 @@ describe('displayNameUtils', () => {
             const symbol = {
                 market: 'synthetic_index',
                 submarket: 'continuous_indices',
-                subgroup: 'synthetics'
+                subgroup: 'synthetics',
             };
-            
+
             const result = getSymbolCategoryPath(symbol);
-            expect(result).to.equal('Synthetic Indices > Continuous Indices > Synthetics');
+            expect(result).to.equal('Derived > Continuous Indices > Synthetics');
         });
 
         it('should skip hidden subgroups', () => {
             const symbol = {
                 market: 'forex',
                 submarket: 'major_pairs',
-                subgroup: 'none'
+                subgroup: 'none',
             };
-            
+
             const result = getSymbolCategoryPath(symbol);
             expect(result).to.equal('Forex > Major Pairs');
         });
 
         it('should handle partial paths', () => {
             const symbol = {
-                market: 'forex'
+                market: 'forex',
             };
-            
+
             const result = getSymbolCategoryPath(symbol);
             expect(result).to.equal('Forex');
         });
@@ -177,18 +177,18 @@ describe('displayNameUtils', () => {
         it('should return market and submarket path', () => {
             const symbol = {
                 market: 'forex',
-                submarket: 'major_pairs'
+                submarket: 'major_pairs',
             };
-            
+
             const result = getShortCategoryPath(symbol);
             expect(result).to.equal('Forex > Major Pairs');
         });
 
         it('should handle market only', () => {
             const symbol = {
-                market: 'forex'
+                market: 'forex',
             };
-            
+
             const result = getShortCategoryPath(symbol);
             expect(result).to.equal('Forex');
         });
@@ -199,9 +199,9 @@ describe('displayNameUtils', () => {
             const symbol = {
                 market: 'forex',
                 submarket: 'major_pairs',
-                subgroup: 'none'
+                subgroup: 'none',
             };
-            
+
             const result = shouldHideSymbol(symbol);
             expect(result).to.be.true;
         });
@@ -210,9 +210,9 @@ describe('displayNameUtils', () => {
             const symbol = {
                 market: 'synthetic_index',
                 submarket: 'continuous_indices',
-                subgroup: 'synthetics'
+                subgroup: 'synthetics',
             };
-            
+
             const result = shouldHideSymbol(symbol);
             expect(result).to.be.false;
         });
@@ -220,9 +220,9 @@ describe('displayNameUtils', () => {
         it('should return false for symbols without subgroups', () => {
             const symbol = {
                 market: 'forex',
-                submarket: 'major_pairs'
+                submarket: 'major_pairs',
             };
-            
+
             const result = shouldHideSymbol(symbol);
             expect(result).to.be.false;
         });
@@ -232,13 +232,13 @@ describe('displayNameUtils', () => {
         it('should return display names with caching enabled', () => {
             const symbol = {
                 symbol: 'R_10',
-                market: 'synthetic_index'
+                market: 'synthetic_index',
             };
-            
+
             const result = getCachedDisplayNames(symbol);
-            
+
             expect(result.symbolDisplayName).to.equal('Volatility 10 Index');
-            expect(result.marketDisplayName).to.equal('Synthetic Indices');
+            expect(result.marketDisplayName).to.equal('Derived');
         });
     });
 
@@ -246,19 +246,21 @@ describe('displayNameUtils', () => {
         it('should return display names with logging enabled', () => {
             const originalWarn = console.warn;
             let loggedMessage = '';
-            console.warn = (message: string) => { loggedMessage = message; };
-            
+            console.warn = (message: string) => {
+                loggedMessage = message;
+            };
+
             const symbol = {
                 symbol: 'UNKNOWN_SYMBOL',
-                market: 'synthetic_index'
+                market: 'synthetic_index',
             };
-            
+
             const result = getDebugDisplayNames(symbol);
-            
+
             expect(result.symbolDisplayName).to.equal('Unknown Symbol');
-            expect(result.marketDisplayName).to.equal('Synthetic Indices');
+            expect(result.marketDisplayName).to.equal('Derived');
             expect(loggedMessage).to.include('Missing symbol display name mapping');
-            
+
             console.warn = originalWarn;
         });
     });
@@ -267,11 +269,11 @@ describe('displayNameUtils', () => {
         it('should return display names for multiple symbols', () => {
             const symbols = [
                 { symbol: 'R_10', market: 'synthetic_index' },
-                { symbol: 'R_25', market: 'synthetic_index' }
+                { symbol: 'R_25', market: 'synthetic_index' },
             ];
-            
+
             const result = batchGetSymbolDisplayNames(symbols);
-            
+
             expect(result).to.have.length(2);
             expect(result[0].symbolDisplayName).to.equal('Volatility 10 Index');
             expect(result[1].symbolDisplayName).to.equal('Volatility 25 Index');
@@ -285,12 +287,8 @@ describe('displayNameUtils', () => {
 
     describe('searchSymbolsByDisplayName', () => {
         it('should find symbols by display name match', () => {
-            const symbols = [
-                { symbol: 'R_10' },
-                { symbol: 'R_25' },
-                { symbol: 'EURUSD' }
-            ];
-            
+            const symbols = [{ symbol: 'R_10' }, { symbol: 'R_25' }, { symbol: 'EURUSD' }];
+
             const results = searchSymbolsByDisplayName(symbols, 'volatility');
             expect(results).to.have.length(2);
             expect(results.some(r => r.symbol === 'R_10')).to.be.true;
@@ -298,11 +296,8 @@ describe('displayNameUtils', () => {
         });
 
         it('should return all symbols for empty search term', () => {
-            const symbols = [
-                { symbol: 'R_10' },
-                { symbol: 'R_25' }
-            ];
-            
+            const symbols = [{ symbol: 'R_10' }, { symbol: 'R_25' }];
+
             const results = searchSymbolsByDisplayName(symbols, '');
             expect(results).to.have.length(2);
         });
@@ -319,14 +314,14 @@ describe('displayNameUtils', () => {
             const symbols = [
                 { symbol: 'R_10', market: 'synthetic_index' },
                 { symbol: 'R_25', market: 'synthetic_index' },
-                { symbol: 'EURUSD', market: 'forex' }
+                { symbol: 'EURUSD', market: 'forex' },
             ];
-            
+
             const grouped = groupSymbolsByMarket(symbols);
-            
+
             expect(grouped).to.be.an('object');
-            expect(grouped['Synthetic Indices']).to.have.length(2);
-            expect(grouped['Forex']).to.have.length(1);
+            expect(grouped.Derived).to.have.length(2);
+            expect(grouped.Forex).to.have.length(1);
         });
 
         it('should handle empty array', () => {
@@ -341,24 +336,21 @@ describe('displayNameUtils', () => {
             const symbols = [
                 { symbol: 'R_10', submarket: 'continuous_indices' },
                 { symbol: 'R_25', submarket: 'continuous_indices' },
-                { symbol: 'EURUSD', submarket: 'major_pairs' }
+                { symbol: 'EURUSD', submarket: 'major_pairs' },
             ];
-            
+
             const grouped = groupSymbolsBySubmarket(symbols);
-            
+
             expect(grouped).to.be.an('object');
             expect(grouped['Continuous Indices']).to.have.length(2);
             expect(grouped['Major Pairs']).to.have.length(1);
         });
 
         it('should handle symbols without submarket', () => {
-            const symbols = [
-                { symbol: 'R_10', submarket: 'continuous_indices' },
-                { symbol: 'TEST' }
-            ];
-            
+            const symbols = [{ symbol: 'R_10', submarket: 'continuous_indices' }, { symbol: 'TEST' }];
+
             const grouped = groupSymbolsBySubmarket(symbols);
-            
+
             expect(grouped['Continuous Indices']).to.have.length(1);
             expect(Object.keys(grouped)).to.have.length(1);
         });

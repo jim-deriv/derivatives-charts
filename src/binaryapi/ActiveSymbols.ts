@@ -6,9 +6,7 @@ import TradingTimes from './TradingTimes';
 import { cloneCategories, stableSort } from '../utils';
 import PendingPromise from '../utils/PendingPromise';
 import { isDeepEqual } from '../utils/object';
-import {
-    getCachedDisplayNames
-} from '../utils/displayNameUtils';
+import { getCachedDisplayNames } from '../utils/displayNameUtils';
 
 const DefaultSymbols = [
     'synthetic_index',
@@ -132,7 +130,7 @@ export default class ActiveSymbols {
     computeActiveSymbols(active_symbols: TActiveSymbols) {
         runInAction(() => {
             this.processedSymbols = this._processSymbols(active_symbols);
-            
+
             this.categorizedSymbols = this._categorizeActiveSymbols(this.processedSymbols);
         });
         for (const symbolObj of this.processedSymbols || []) {
@@ -170,22 +168,23 @@ export default class ActiveSymbols {
         const processedSymbols: TProcessedSymbols = [];
 
         // Stable sort is required to retain the order of the symbol name
-        const sortedSymbols = stableSort(symbols, (a, b) =>
-            a.submarket.localeCompare(b.submarket)
-        );
+        const sortedSymbols = stableSort(symbols, (a, b) => a.submarket.localeCompare(b.submarket));
 
         for (const s of sortedSymbols) {
+            // Type assertion for new API property names until @deriv/api-types is updated
+            const symbolData = s as any;
+
+            // Use the newer underlying_symbol property, fallback to original symbol
+            const symbolForDisplayName = symbolData.underlying_symbol || s.symbol;
+
             // Get display names using the display name service
             const displayNames = getCachedDisplayNames({
-                symbol: s.symbol,
+                symbol: symbolForDisplayName,
                 market: s.market,
                 submarket: s.submarket,
                 subgroup: s.subgroup,
             });
 
-            // Type assertion for new API property names until @deriv/api-types is updated
-            const symbolData = s as any;
-            
             processedSymbols.push({
                 symbol: symbolData.underlying_symbol,
                 name: symbolData.underlying_symbol, // Keep raw symbol for internal use
@@ -232,34 +231,41 @@ export default class ActiveSymbols {
             data: [],
             subgroups: [],
         });
-        
+
         // Use a Map to collect all subcategories for each category
-        const categoryMap = new Map<string, {
-            category: TCategorizedSymbolItem,
-            subcategories: Map<string, TSubCategory>
-        }>();        
-        for (const symbol of activeSymbols) {            
+        const categoryMap = new Map<
+            string,
+            {
+                category: TCategorizedSymbolItem;
+                subcategories: Map<string, TSubCategory>;
+            }
+        >();
+        for (const symbol of activeSymbols) {
             const category = getCategory(symbol);
             const subcategory = getSubcategory(symbol);
-            
+
             if (!categoryMap.has(category.categoryId)) {
                 categoryMap.set(category.categoryId, {
-                    category: category,
-                    subcategories: new Map<string, TSubCategory>()
+                    category,
+                    subcategories: new Map<string, TSubCategory>(),
                 });
             }
-            
+
             const categoryData = categoryMap.get(category.categoryId)!;
-            
+
             if (!categoryData.subcategories.has(subcategory.subcategoryName)) {
                 categoryData.subcategories.set(subcategory.subcategoryName, subcategory);
             }
-            
+
             const currentSubcategory = categoryData.subcategories.get(subcategory.subcategoryName)!;
-            
+
             // Handle subgroups if needed
             if (category.hasSubgroup) {
-                if (!categoryData.category.subgroups?.some((el: TCategorizedSymbolItem) => el.categoryId === symbol.subgroup)) {
+                if (
+                    !categoryData.category.subgroups?.some(
+                        (el: TCategorizedSymbolItem) => el.categoryId === symbol.subgroup
+                    )
+                ) {
                     categoryData.category.subgroups?.push({
                         data: [],
                         categoryName: symbol.subgroupDisplayName || symbol.subgroup,
@@ -273,7 +279,10 @@ export default class ActiveSymbols {
                 if (
                     !categoryData.category.subgroups
                         ?.find((el: TCategorizedSymbolItem) => el.categoryId === symbol.subgroup)
-                        ?.data.find((el: TSubCategory) => el.subcategoryName === (symbol.submarketDisplayName || symbol.submarket))
+                        ?.data.find(
+                            (el: TSubCategory) =>
+                                el.subcategoryName === (symbol.submarketDisplayName || symbol.submarket)
+                        )
                 ) {
                     const subgroupSubcategory = getSubcategory(symbol);
                     categoryData.category.subgroups
@@ -282,7 +291,9 @@ export default class ActiveSymbols {
                 }
                 categoryData.category.subgroups
                     ?.find((el: TCategorizedSymbolItem) => el.categoryId === symbol.subgroup)
-                    ?.data.find((el: TSubCategory) => el.subcategoryName === (symbol.submarketDisplayName || symbol.submarket))
+                    ?.data.find(
+                        (el: TSubCategory) => el.subcategoryName === (symbol.submarketDisplayName || symbol.submarket)
+                    )
                     ?.data.push({
                         enabled: true,
                         itemId: symbol.symbol,

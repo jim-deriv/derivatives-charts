@@ -100,5 +100,23 @@
         "react/require-default-props": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-var-requires": "off"
-    }
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/__tests__/**/*.ts",
+                "**/__tests__/**/*.tsx",
+                "**/*.spec.ts",
+                "**/*.spec.tsx",
+                "**/*.test.ts",
+                "**/*.test.tsx"
+            ],
+            "env": {
+                "mocha": true
+            },
+            "rules": {
+                "no-unused-expressions": "off"
+            }
+        }
+    ]
 }

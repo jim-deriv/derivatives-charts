@@ -227,14 +227,14 @@ class Feed {
         this.paginationLoader.updateOnPagination(true);
         const { granularity, symbolObject } = params;
         const key = this._getKey({ symbol, granularity });
-        let start = this.margin && this.startEpoch ? this.startEpoch - this.margin : this.startEpoch;
+        const start = this.margin && this.startEpoch ? this.startEpoch - this.margin : this.startEpoch;
         const end = this.margin && this.endEpoch ? this.endEpoch + this.margin : this.endEpoch;
 
         const symbolName = getSymbolDisplayName(symbolObject.symbol) || symbolObject.name;
         this.loader.setState('chart-data');
         if (this._tradingTimes.isFeedUnavailable(symbol)) {
             this._mainStore.notifier.notifyFeedUnavailable(symbolName);
-            let dataCallback: {
+            const dataCallback: {
                 error?: string;
                 suppressAlert?: boolean;
                 quotes: TQuote[];
@@ -259,7 +259,7 @@ class Feed {
             getHistoryOnly = true;
         } else if (validation_error !== 'MarketIsClosed' && validation_error !== 'MarketIsClosedTryVolatility') {
             let subscription: DelayedSubscription | RealtimeSubscription;
-            const delay = this._tradingTimes.getDelayedMinutes();
+            const delay = this._tradingTimes.getDelayedMinutes(symbolObject.symbol);
             if (delay > 0) {
                 this._mainStore.notifier.notifyDelayedMarket(symbolName, delay);
                 subscription = new DelayedSubscription(
