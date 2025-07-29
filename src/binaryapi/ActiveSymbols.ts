@@ -174,8 +174,8 @@ export default class ActiveSymbols {
             // Type assertion for new API property names until @deriv/api-types is updated
             const symbolData = s as any;
 
-            // Use the original symbol for display name lookup, fallback to underlying_symbol
-            const symbolForDisplayName = s.symbol || symbolData.underlying_symbol;
+            // Use the newer underlying_symbol property, fallback to original symbol
+            const symbolForDisplayName = symbolData.underlying_symbol || s.symbol;
 
             // Get display names using the display name service
             const displayNames = getCachedDisplayNames({
