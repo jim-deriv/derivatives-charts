@@ -35,7 +35,7 @@ describe('TradingTimes test', async function () {
     });
 
     it('Test getDelayedMinutes', function () {
-        expect(this.tt.getDelayedMinutes('BSESENSEX30')).to.be.equal(0);
+        expect(this.tt.getDelayedMinutes('BSESENSEX30')).to.be.equal(10);
         expect(this.tt.getDelayedMinutes('R_50')).to.be.equal(0);
     });
 
@@ -77,7 +77,7 @@ describe('TradingTimes test', async function () {
             this.clock.tick('07:30:00'); // 14:30:00
 
             changes = spy.lastCall.args[0];
-            expect(changes['OBX']).to.be.false;
+            expect(changes.OBX).to.be.false;
 
             this.clock.tick('01:00:00'); // 15:30:00
 

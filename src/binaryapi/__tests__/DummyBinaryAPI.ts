@@ -21,7 +21,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/JPY',
-                                symbol: 'frxAUDJPY',
+                                underlying_symbol: 'frxAUDJPY',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -37,7 +37,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/USD',
-                                symbol: 'frxAUDUSD',
+                                underlying_symbol: 'frxAUDUSD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -53,7 +53,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/AUD',
-                                symbol: 'frxEURAUD',
+                                underlying_symbol: 'frxEURAUD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -69,7 +69,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/CAD',
-                                symbol: 'frxEURCAD',
+                                underlying_symbol: 'frxEURCAD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -85,7 +85,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/CHF',
-                                symbol: 'frxEURCHF',
+                                underlying_symbol: 'frxEURCHF',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -101,7 +101,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/GBP',
-                                symbol: 'frxEURGBP',
+                                underlying_symbol: 'frxEURGBP',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -117,7 +117,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/JPY',
-                                symbol: 'frxEURJPY',
+                                underlying_symbol: 'frxEURJPY',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -133,7 +133,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/USD',
-                                symbol: 'frxEURUSD',
+                                underlying_symbol: 'frxEURUSD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -149,7 +149,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/AUD',
-                                symbol: 'frxGBPAUD',
+                                underlying_symbol: 'frxGBPAUD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -165,7 +165,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/JPY',
-                                symbol: 'frxGBPJPY',
+                                underlying_symbol: 'frxGBPJPY',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -181,7 +181,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/USD',
-                                symbol: 'frxGBPUSD',
+                                underlying_symbol: 'frxGBPUSD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -197,7 +197,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/CAD',
-                                symbol: 'frxUSDCAD',
+                                underlying_symbol: 'frxUSDCAD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -213,7 +213,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/CHF',
-                                symbol: 'frxUSDCHF',
+                                underlying_symbol: 'frxUSDCHF',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -229,7 +229,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/JPY',
-                                symbol: 'frxUSDJPY',
+                                underlying_symbol: 'frxUSDJPY',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -250,7 +250,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/CAD',
-                                symbol: 'frxAUDCAD',
+                                underlying_symbol: 'frxAUDCAD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -266,7 +266,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/CHF',
-                                symbol: 'frxAUDCHF',
+                                underlying_symbol: 'frxAUDCHF',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -282,7 +282,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/NZD',
-                                symbol: 'frxAUDNZD',
+                                underlying_symbol: 'frxAUDNZD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -298,7 +298,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/NZD',
-                                symbol: 'frxEURNZD',
+                                underlying_symbol: 'frxEURNZD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -314,7 +314,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/CAD',
-                                symbol: 'frxGBPCAD',
+                                underlying_symbol: 'frxGBPCAD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -330,7 +330,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/CHF',
-                                symbol: 'frxGBPCHF',
+                                underlying_symbol: 'frxGBPCHF',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -346,7 +346,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/NOK',
-                                symbol: 'frxGBPNOK',
+                                underlying_symbol: 'frxGBPNOK',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -362,7 +362,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/NZD',
-                                symbol: 'frxGBPNZD',
+                                underlying_symbol: 'frxGBPNZD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -378,7 +378,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/PLN',
-                                symbol: 'frxGBPPLN',
+                                underlying_symbol: 'frxGBPPLN',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -394,7 +394,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'NZD/JPY',
-                                symbol: 'frxNZDJPY',
+                                underlying_symbol: 'frxNZDJPY',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -410,7 +410,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'NZD/USD',
-                                symbol: 'frxNZDUSD',
+                                underlying_symbol: 'frxNZDUSD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -426,7 +426,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/MXN',
-                                symbol: 'frxUSDMXN',
+                                underlying_symbol: 'frxUSDMXN',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -442,7 +442,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/NOK',
-                                symbol: 'frxUSDNOK',
+                                underlying_symbol: 'frxUSDNOK',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -458,7 +458,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/PLN',
-                                symbol: 'frxUSDPLN',
+                                underlying_symbol: 'frxUSDPLN',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -474,7 +474,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/SEK',
-                                symbol: 'frxUSDSEK',
+                                underlying_symbol: 'frxUSDSEK',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -500,7 +500,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD Basket',
-                                symbol: 'WLDAUD',
+                                underlying_symbol: 'WLDAUD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -516,7 +516,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR Basket',
-                                symbol: 'WLDEUR',
+                                underlying_symbol: 'WLDEUR',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -532,7 +532,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP Basket',
-                                symbol: 'WLDGBP',
+                                underlying_symbol: 'WLDGBP',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -548,7 +548,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'USD Basket',
-                                symbol: 'WLDUSD',
+                                underlying_symbol: 'WLDUSD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -569,7 +569,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'Gold Basket',
-                                symbol: 'WLDXAU',
+                                underlying_symbol: 'WLDXAU',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -592,7 +592,7 @@ const friday_trading_times = {
                                 events: [],
                                 feed_license: 'chartonly',
                                 name: 'Australian Index',
-                                symbol: 'AS51',
+                                underlying_symbol: 'AS51',
                                 times: {
                                     close: ['06:00:00'],
                                     open: ['00:00:00'],
@@ -614,7 +614,7 @@ const friday_trading_times = {
                                 ],
                                 feed_license: 'delayed',
                                 name: 'Bombay Index',
-                                symbol: 'BSESENSEX30',
+                                underlying_symbol: 'BSESENSEX30',
                                 times: {
                                     close: ['10:00:00'],
                                     open: ['03:45:00'],
@@ -627,7 +627,7 @@ const friday_trading_times = {
                                 events: [],
                                 feed_license: 'delayed',
                                 name: 'Hong Kong Index',
-                                symbol: 'HSI',
+                                underlying_symbol: 'HSI',
                                 times: {
                                     close: ['03:59:00', '07:40:00'],
                                     open: ['01:30:00', '05:00:00'],
@@ -649,7 +649,7 @@ const friday_trading_times = {
                                 ],
                                 feed_license: 'daily',
                                 name: 'Japanese Index',
-                                symbol: 'N225',
+                                underlying_symbol: 'N225',
                                 times: {
                                     close: ['02:30:00', '06:00:00'],
                                     open: ['00:00:00', '03:30:00'],
@@ -662,7 +662,7 @@ const friday_trading_times = {
                                 events: [],
                                 feed_license: 'daily',
                                 name: 'Singapore Index',
-                                symbol: 'STI',
+                                underlying_symbol: 'STI',
                                 times: {
                                     close: ['09:00:00'],
                                     open: ['01:00:00'],
@@ -678,7 +678,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Belgian Index',
-                                symbol: 'BFX',
+                                underlying_symbol: 'BFX',
                                 times: {
                                     close: ['15:30:00'],
                                     open: ['07:00:00'],
@@ -689,7 +689,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Dutch Index',
-                                symbol: 'AEX',
+                                underlying_symbol: 'AEX',
                                 times: {
                                     close: ['15:30:00'],
                                     open: ['07:00:00'],
@@ -700,7 +700,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'French Index',
-                                symbol: 'FCHI',
+                                underlying_symbol: 'FCHI',
                                 times: {
                                     close: ['15:30:00'],
                                     open: ['07:00:00'],
@@ -713,7 +713,7 @@ const friday_trading_times = {
                                 events: [],
                                 feed_license: 'delayed',
                                 name: 'German Index',
-                                symbol: 'GDAXI',
+                                underlying_symbol: 'GDAXI',
                                 times: {
                                     close: ['15:30:00'],
                                     open: ['07:00:00'],
@@ -726,7 +726,7 @@ const friday_trading_times = {
                                 events: [],
                                 feed_license: 'delayed',
                                 name: 'Irish Index',
-                                symbol: 'ISEQ',
+                                underlying_symbol: 'ISEQ',
                                 times: {
                                     close: ['15:30:00'],
                                     open: ['07:00:00'],
@@ -739,7 +739,7 @@ const friday_trading_times = {
                                 events: [],
                                 feed_license: 'delayed',
                                 name: 'Norwegian Index',
-                                symbol: 'OBX',
+                                underlying_symbol: 'OBX',
                                 times: {
                                     close: ['14:30:00'],
                                     open: ['07:00:00'],
@@ -757,7 +757,7 @@ const friday_trading_times = {
                                 ],
                                 feed_license: 'delayed',
                                 name: 'South African Index',
-                                symbol: 'TOP40',
+                                underlying_symbol: 'TOP40',
                                 times: {
                                     close: ['14:50:00'],
                                     open: ['07:00:00'],
@@ -770,7 +770,7 @@ const friday_trading_times = {
                                 events: [],
                                 feed_license: 'daily',
                                 name: 'Swiss Index',
-                                symbol: 'SSMI',
+                                underlying_symbol: 'SSMI',
                                 times: {
                                     close: ['15:20:00'],
                                     open: ['07:00:00'],
@@ -793,7 +793,7 @@ const friday_trading_times = {
                                 ],
                                 feed_license: 'chartonly',
                                 name: 'US Index',
-                                symbol: 'SPC',
+                                underlying_symbol: 'SPC',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['13:30:00'],
@@ -816,7 +816,7 @@ const friday_trading_times = {
                                 ],
                                 feed_license: 'chartonly',
                                 name: 'Dubai Index',
-                                symbol: 'DFMGI',
+                                underlying_symbol: 'DFMGI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -832,7 +832,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Australian OTC Index',
-                                symbol: 'OTC_AS51',
+                                underlying_symbol: 'OTC_AS51',
                                 times: {
                                     close: ['06:30:00', '20:00:00'],
                                     open: ['00:00:00', '07:30:00'],
@@ -843,7 +843,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Dutch OTC Index',
-                                symbol: 'OTC_AEX',
+                                underlying_symbol: 'OTC_AEX',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['06:00:00'],
@@ -854,7 +854,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Euro 50 OTC Index',
-                                symbol: 'OTC_SX5E',
+                                underlying_symbol: 'OTC_SX5E',
                                 times: {
                                     close: ['19:00:00'],
                                     open: ['06:00:00'],
@@ -865,7 +865,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'French OTC Index',
-                                symbol: 'OTC_FCHI',
+                                underlying_symbol: 'OTC_FCHI',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['06:00:00'],
@@ -876,7 +876,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'German OTC Index',
-                                symbol: 'OTC_GDAXI',
+                                underlying_symbol: 'OTC_GDAXI',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['06:00:00'],
@@ -887,7 +887,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Hong Kong OTC Index',
-                                symbol: 'OTC_HSI',
+                                underlying_symbol: 'OTC_HSI',
                                 times: {
                                     close: ['04:00:00', '08:00:00'],
                                     open: ['01:30:00', '05:00:00'],
@@ -907,7 +907,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'Japanese OTC Index',
-                                symbol: 'OTC_N225',
+                                underlying_symbol: 'OTC_N225',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['00:00:00'],
@@ -918,7 +918,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Swiss OTC Index',
-                                symbol: 'OTC_SSMI',
+                                underlying_symbol: 'OTC_SSMI',
                                 times: {
                                     close: ['16:00:00'],
                                     open: ['07:00:00'],
@@ -934,7 +934,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'UK OTC Index',
-                                symbol: 'OTC_FTSE',
+                                underlying_symbol: 'OTC_FTSE',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['06:00:00'],
@@ -950,7 +950,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'US OTC Index',
-                                symbol: 'OTC_SPC',
+                                underlying_symbol: 'OTC_SPC',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['06:00:00'],
@@ -966,7 +966,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'US Tech 100 OTC Index',
-                                symbol: 'OTC_NDX',
+                                underlying_symbol: 'OTC_NDX',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['06:00:00'],
@@ -982,7 +982,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'Wall Street OTC Index',
-                                symbol: 'OTC_DJI',
+                                underlying_symbol: 'OTC_DJI',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['06:00:00'],
@@ -1012,7 +1012,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'Gold/USD',
-                                symbol: 'frxXAUUSD',
+                                underlying_symbol: 'frxXAUUSD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -1032,7 +1032,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'Palladium/USD',
-                                symbol: 'frxXPDUSD',
+                                underlying_symbol: 'frxXPDUSD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -1052,7 +1052,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'Platinum/USD',
-                                symbol: 'frxXPTUSD',
+                                underlying_symbol: 'frxXPTUSD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -1072,7 +1072,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'Silver/USD',
-                                symbol: 'frxXAGUSD',
+                                underlying_symbol: 'frxXAGUSD',
                                 times: {
                                     close: ['21:00:00'],
                                     open: ['00:00:00'],
@@ -1093,7 +1093,7 @@ const friday_trading_times = {
                                     },
                                 ],
                                 name: 'Oil/USD',
-                                symbol: 'frxBROUSD',
+                                underlying_symbol: 'frxBROUSD',
                                 times: {
                                     close: ['18:30:00'],
                                     open: ['07:15:00'],
@@ -1114,7 +1114,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 10 Index',
-                                symbol: 'R_10',
+                                underlying_symbol: 'R_10',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -1125,7 +1125,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 25 Index',
-                                symbol: 'R_25',
+                                underlying_symbol: 'R_25',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -1136,7 +1136,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 50 Index',
-                                symbol: 'R_50',
+                                underlying_symbol: 'R_50',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -1147,7 +1147,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 75 Index',
-                                symbol: 'R_75',
+                                underlying_symbol: 'R_75',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -1158,7 +1158,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 100 Index',
-                                symbol: 'R_100',
+                                underlying_symbol: 'R_100',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -1174,7 +1174,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Bear Market Index',
-                                symbol: 'RDBEAR',
+                                underlying_symbol: 'RDBEAR',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -1185,7 +1185,7 @@ const friday_trading_times = {
                             {
                                 events: [],
                                 name: 'Bull Market Index',
-                                symbol: 'RDBULL',
+                                underlying_symbol: 'RDBULL',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -1222,7 +1222,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/JPY',
-                                symbol: 'frxAUDJPY',
+                                underlying_symbol: 'frxAUDJPY',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1238,7 +1238,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/USD',
-                                symbol: 'frxAUDUSD',
+                                underlying_symbol: 'frxAUDUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1254,7 +1254,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/AUD',
-                                symbol: 'frxEURAUD',
+                                underlying_symbol: 'frxEURAUD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1270,7 +1270,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/CAD',
-                                symbol: 'frxEURCAD',
+                                underlying_symbol: 'frxEURCAD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1286,7 +1286,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/CHF',
-                                symbol: 'frxEURCHF',
+                                underlying_symbol: 'frxEURCHF',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1302,7 +1302,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/GBP',
-                                symbol: 'frxEURGBP',
+                                underlying_symbol: 'frxEURGBP',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1318,7 +1318,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/JPY',
-                                symbol: 'frxEURJPY',
+                                underlying_symbol: 'frxEURJPY',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1334,7 +1334,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/USD',
-                                symbol: 'frxEURUSD',
+                                underlying_symbol: 'frxEURUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1350,7 +1350,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/AUD',
-                                symbol: 'frxGBPAUD',
+                                underlying_symbol: 'frxGBPAUD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1366,7 +1366,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/JPY',
-                                symbol: 'frxGBPJPY',
+                                underlying_symbol: 'frxGBPJPY',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1382,7 +1382,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/USD',
-                                symbol: 'frxGBPUSD',
+                                underlying_symbol: 'frxGBPUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1398,7 +1398,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/CAD',
-                                symbol: 'frxUSDCAD',
+                                underlying_symbol: 'frxUSDCAD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1414,7 +1414,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/CHF',
-                                symbol: 'frxUSDCHF',
+                                underlying_symbol: 'frxUSDCHF',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1430,7 +1430,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/JPY',
-                                symbol: 'frxUSDJPY',
+                                underlying_symbol: 'frxUSDJPY',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1451,7 +1451,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/CAD',
-                                symbol: 'frxAUDCAD',
+                                underlying_symbol: 'frxAUDCAD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1467,7 +1467,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/CHF',
-                                symbol: 'frxAUDCHF',
+                                underlying_symbol: 'frxAUDCHF',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1483,7 +1483,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/NZD',
-                                symbol: 'frxAUDNZD',
+                                underlying_symbol: 'frxAUDNZD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1499,7 +1499,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/NZD',
-                                symbol: 'frxEURNZD',
+                                underlying_symbol: 'frxEURNZD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1515,7 +1515,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/CAD',
-                                symbol: 'frxGBPCAD',
+                                underlying_symbol: 'frxGBPCAD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1531,7 +1531,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/CHF',
-                                symbol: 'frxGBPCHF',
+                                underlying_symbol: 'frxGBPCHF',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1547,7 +1547,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/NOK',
-                                symbol: 'frxGBPNOK',
+                                underlying_symbol: 'frxGBPNOK',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1563,7 +1563,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/NZD',
-                                symbol: 'frxGBPNZD',
+                                underlying_symbol: 'frxGBPNZD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1579,7 +1579,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/PLN',
-                                symbol: 'frxGBPPLN',
+                                underlying_symbol: 'frxGBPPLN',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1595,7 +1595,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'NZD/JPY',
-                                symbol: 'frxNZDJPY',
+                                underlying_symbol: 'frxNZDJPY',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1611,7 +1611,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'NZD/USD',
-                                symbol: 'frxNZDUSD',
+                                underlying_symbol: 'frxNZDUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1627,7 +1627,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/MXN',
-                                symbol: 'frxUSDMXN',
+                                underlying_symbol: 'frxUSDMXN',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1643,7 +1643,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/NOK',
-                                symbol: 'frxUSDNOK',
+                                underlying_symbol: 'frxUSDNOK',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1659,7 +1659,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/PLN',
-                                symbol: 'frxUSDPLN',
+                                underlying_symbol: 'frxUSDPLN',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1675,7 +1675,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/SEK',
-                                symbol: 'frxUSDSEK',
+                                underlying_symbol: 'frxUSDSEK',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1701,7 +1701,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD Basket',
-                                symbol: 'WLDAUD',
+                                underlying_symbol: 'WLDAUD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1717,7 +1717,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR Basket',
-                                symbol: 'WLDEUR',
+                                underlying_symbol: 'WLDEUR',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1733,7 +1733,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP Basket',
-                                symbol: 'WLDGBP',
+                                underlying_symbol: 'WLDGBP',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1749,7 +1749,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'USD Basket',
-                                symbol: 'WLDUSD',
+                                underlying_symbol: 'WLDUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1770,7 +1770,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'Gold Basket',
-                                symbol: 'WLDXAU',
+                                underlying_symbol: 'WLDXAU',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1793,7 +1793,7 @@ const saturday_trading_times = {
                                 events: [],
                                 feed_license: 'chartonly',
                                 name: 'Australian Index',
-                                symbol: 'AS51',
+                                underlying_symbol: 'AS51',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1815,7 +1815,7 @@ const saturday_trading_times = {
                                 ],
                                 feed_license: 'delayed',
                                 name: 'Bombay Index',
-                                symbol: 'BSESENSEX30',
+                                underlying_symbol: 'BSESENSEX30',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1833,7 +1833,7 @@ const saturday_trading_times = {
                                 ],
                                 feed_license: 'delayed',
                                 name: 'Hong Kong Index',
-                                symbol: 'HSI',
+                                underlying_symbol: 'HSI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1855,7 +1855,7 @@ const saturday_trading_times = {
                                 ],
                                 feed_license: 'daily',
                                 name: 'Japanese Index',
-                                symbol: 'N225',
+                                underlying_symbol: 'N225',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1868,7 +1868,7 @@ const saturday_trading_times = {
                                 events: [],
                                 feed_license: 'daily',
                                 name: 'Singapore Index',
-                                symbol: 'STI',
+                                underlying_symbol: 'STI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1884,7 +1884,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'Belgian Index',
-                                symbol: 'BFX',
+                                underlying_symbol: 'BFX',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1895,7 +1895,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'Dutch Index',
-                                symbol: 'AEX',
+                                underlying_symbol: 'AEX',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1906,7 +1906,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'French Index',
-                                symbol: 'FCHI',
+                                underlying_symbol: 'FCHI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1919,7 +1919,7 @@ const saturday_trading_times = {
                                 events: [],
                                 feed_license: 'delayed',
                                 name: 'German Index',
-                                symbol: 'GDAXI',
+                                underlying_symbol: 'GDAXI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1932,7 +1932,7 @@ const saturday_trading_times = {
                                 events: [],
                                 feed_license: 'delayed',
                                 name: 'Irish Index',
-                                symbol: 'ISEQ',
+                                underlying_symbol: 'ISEQ',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1945,7 +1945,7 @@ const saturday_trading_times = {
                                 events: [],
                                 feed_license: 'delayed',
                                 name: 'Norwegian Index',
-                                symbol: 'OBX',
+                                underlying_symbol: 'OBX',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1963,7 +1963,7 @@ const saturday_trading_times = {
                                 ],
                                 feed_license: 'delayed',
                                 name: 'South African Index',
-                                symbol: 'TOP40',
+                                underlying_symbol: 'TOP40',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1976,7 +1976,7 @@ const saturday_trading_times = {
                                 events: [],
                                 feed_license: 'daily',
                                 name: 'Swiss Index',
-                                symbol: 'SSMI',
+                                underlying_symbol: 'SSMI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -1999,7 +1999,7 @@ const saturday_trading_times = {
                                 ],
                                 feed_license: 'chartonly',
                                 name: 'US Index',
-                                symbol: 'SPC',
+                                underlying_symbol: 'SPC',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2022,7 +2022,7 @@ const saturday_trading_times = {
                                 ],
                                 feed_license: 'chartonly',
                                 name: 'Dubai Index',
-                                symbol: 'DFMGI',
+                                underlying_symbol: 'DFMGI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2038,7 +2038,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'Australian OTC Index',
-                                symbol: 'OTC_AS51',
+                                underlying_symbol: 'OTC_AS51',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2049,7 +2049,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'Dutch OTC Index',
-                                symbol: 'OTC_AEX',
+                                underlying_symbol: 'OTC_AEX',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2060,7 +2060,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'Euro 50 OTC Index',
-                                symbol: 'OTC_SX5E',
+                                underlying_symbol: 'OTC_SX5E',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2071,7 +2071,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'French OTC Index',
-                                symbol: 'OTC_FCHI',
+                                underlying_symbol: 'OTC_FCHI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2082,7 +2082,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'German OTC Index',
-                                symbol: 'OTC_GDAXI',
+                                underlying_symbol: 'OTC_GDAXI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2098,7 +2098,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'Hong Kong OTC Index',
-                                symbol: 'OTC_HSI',
+                                underlying_symbol: 'OTC_HSI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2118,7 +2118,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'Japanese OTC Index',
-                                symbol: 'OTC_N225',
+                                underlying_symbol: 'OTC_N225',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2129,7 +2129,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'Swiss OTC Index',
-                                symbol: 'OTC_SSMI',
+                                underlying_symbol: 'OTC_SSMI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2145,7 +2145,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'UK OTC Index',
-                                symbol: 'OTC_FTSE',
+                                underlying_symbol: 'OTC_FTSE',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2161,7 +2161,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'US OTC Index',
-                                symbol: 'OTC_SPC',
+                                underlying_symbol: 'OTC_SPC',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2177,7 +2177,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'US Tech 100 OTC Index',
-                                symbol: 'OTC_NDX',
+                                underlying_symbol: 'OTC_NDX',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2193,7 +2193,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'Wall Street OTC Index',
-                                symbol: 'OTC_DJI',
+                                underlying_symbol: 'OTC_DJI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2223,7 +2223,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'Gold/USD',
-                                symbol: 'frxXAUUSD',
+                                underlying_symbol: 'frxXAUUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2243,7 +2243,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'Palladium/USD',
-                                symbol: 'frxXPDUSD',
+                                underlying_symbol: 'frxXPDUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2263,7 +2263,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'Platinum/USD',
-                                symbol: 'frxXPTUSD',
+                                underlying_symbol: 'frxXPTUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2283,7 +2283,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'Silver/USD',
-                                symbol: 'frxXAGUSD',
+                                underlying_symbol: 'frxXAGUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2304,7 +2304,7 @@ const saturday_trading_times = {
                                     },
                                 ],
                                 name: 'Oil/USD',
-                                symbol: 'frxBROUSD',
+                                underlying_symbol: 'frxBROUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2325,7 +2325,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 10 Index',
-                                symbol: 'R_10',
+                                underlying_symbol: 'R_10',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -2336,7 +2336,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 25 Index',
-                                symbol: 'R_25',
+                                underlying_symbol: 'R_25',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -2347,7 +2347,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 50 Index',
-                                symbol: 'R_50',
+                                underlying_symbol: 'R_50',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -2358,7 +2358,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 75 Index',
-                                symbol: 'R_75',
+                                underlying_symbol: 'R_75',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -2369,7 +2369,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 100 Index',
-                                symbol: 'R_100',
+                                underlying_symbol: 'R_100',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -2385,7 +2385,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'Bear Market Index',
-                                symbol: 'RDBEAR',
+                                underlying_symbol: 'RDBEAR',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -2396,7 +2396,7 @@ const saturday_trading_times = {
                             {
                                 events: [],
                                 name: 'Bull Market Index',
-                                symbol: 'RDBULL',
+                                underlying_symbol: 'RDBULL',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -2433,7 +2433,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/JPY',
-                                symbol: 'frxAUDJPY',
+                                underlying_symbol: 'frxAUDJPY',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2449,7 +2449,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/USD',
-                                symbol: 'frxAUDUSD',
+                                underlying_symbol: 'frxAUDUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2465,7 +2465,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/AUD',
-                                symbol: 'frxEURAUD',
+                                underlying_symbol: 'frxEURAUD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2481,7 +2481,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/CAD',
-                                symbol: 'frxEURCAD',
+                                underlying_symbol: 'frxEURCAD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2497,7 +2497,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/CHF',
-                                symbol: 'frxEURCHF',
+                                underlying_symbol: 'frxEURCHF',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2513,7 +2513,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/GBP',
-                                symbol: 'frxEURGBP',
+                                underlying_symbol: 'frxEURGBP',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2529,7 +2529,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/JPY',
-                                symbol: 'frxEURJPY',
+                                underlying_symbol: 'frxEURJPY',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2545,7 +2545,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/USD',
-                                symbol: 'frxEURUSD',
+                                underlying_symbol: 'frxEURUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2561,7 +2561,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/AUD',
-                                symbol: 'frxGBPAUD',
+                                underlying_symbol: 'frxGBPAUD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2577,7 +2577,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/JPY',
-                                symbol: 'frxGBPJPY',
+                                underlying_symbol: 'frxGBPJPY',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2593,7 +2593,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/USD',
-                                symbol: 'frxGBPUSD',
+                                underlying_symbol: 'frxGBPUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2609,7 +2609,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/CAD',
-                                symbol: 'frxUSDCAD',
+                                underlying_symbol: 'frxUSDCAD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2625,7 +2625,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/CHF',
-                                symbol: 'frxUSDCHF',
+                                underlying_symbol: 'frxUSDCHF',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2641,7 +2641,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/JPY',
-                                symbol: 'frxUSDJPY',
+                                underlying_symbol: 'frxUSDJPY',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2662,7 +2662,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/CAD',
-                                symbol: 'frxAUDCAD',
+                                underlying_symbol: 'frxAUDCAD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2678,7 +2678,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/CHF',
-                                symbol: 'frxAUDCHF',
+                                underlying_symbol: 'frxAUDCHF',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2694,7 +2694,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/NZD',
-                                symbol: 'frxAUDNZD',
+                                underlying_symbol: 'frxAUDNZD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2710,7 +2710,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/NZD',
-                                symbol: 'frxEURNZD',
+                                underlying_symbol: 'frxEURNZD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2726,7 +2726,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/CAD',
-                                symbol: 'frxGBPCAD',
+                                underlying_symbol: 'frxGBPCAD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2742,7 +2742,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/CHF',
-                                symbol: 'frxGBPCHF',
+                                underlying_symbol: 'frxGBPCHF',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2758,7 +2758,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/NOK',
-                                symbol: 'frxGBPNOK',
+                                underlying_symbol: 'frxGBPNOK',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2774,7 +2774,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/NZD',
-                                symbol: 'frxGBPNZD',
+                                underlying_symbol: 'frxGBPNZD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2790,7 +2790,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/PLN',
-                                symbol: 'frxGBPPLN',
+                                underlying_symbol: 'frxGBPPLN',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2806,7 +2806,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'NZD/JPY',
-                                symbol: 'frxNZDJPY',
+                                underlying_symbol: 'frxNZDJPY',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2822,7 +2822,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'NZD/USD',
-                                symbol: 'frxNZDUSD',
+                                underlying_symbol: 'frxNZDUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2838,7 +2838,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/MXN',
-                                symbol: 'frxUSDMXN',
+                                underlying_symbol: 'frxUSDMXN',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2854,7 +2854,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/NOK',
-                                symbol: 'frxUSDNOK',
+                                underlying_symbol: 'frxUSDNOK',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2870,7 +2870,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/PLN',
-                                symbol: 'frxUSDPLN',
+                                underlying_symbol: 'frxUSDPLN',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2886,7 +2886,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/SEK',
-                                symbol: 'frxUSDSEK',
+                                underlying_symbol: 'frxUSDSEK',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2912,7 +2912,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD Basket',
-                                symbol: 'WLDAUD',
+                                underlying_symbol: 'WLDAUD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2928,7 +2928,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR Basket',
-                                symbol: 'WLDEUR',
+                                underlying_symbol: 'WLDEUR',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2944,7 +2944,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP Basket',
-                                symbol: 'WLDGBP',
+                                underlying_symbol: 'WLDGBP',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2960,7 +2960,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'USD Basket',
-                                symbol: 'WLDUSD',
+                                underlying_symbol: 'WLDUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -2981,7 +2981,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'Gold Basket',
-                                symbol: 'WLDXAU',
+                                underlying_symbol: 'WLDXAU',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3004,7 +3004,7 @@ const sunday_trading_times = {
                                 events: [],
                                 feed_license: 'chartonly',
                                 name: 'Australian Index',
-                                symbol: 'AS51',
+                                underlying_symbol: 'AS51',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3026,7 +3026,7 @@ const sunday_trading_times = {
                                 ],
                                 feed_license: 'delayed',
                                 name: 'Bombay Index',
-                                symbol: 'BSESENSEX30',
+                                underlying_symbol: 'BSESENSEX30',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3044,7 +3044,7 @@ const sunday_trading_times = {
                                 ],
                                 feed_license: 'delayed',
                                 name: 'Hong Kong Index',
-                                symbol: 'HSI',
+                                underlying_symbol: 'HSI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3066,7 +3066,7 @@ const sunday_trading_times = {
                                 ],
                                 feed_license: 'daily',
                                 name: 'Japanese Index',
-                                symbol: 'N225',
+                                underlying_symbol: 'N225',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3079,7 +3079,7 @@ const sunday_trading_times = {
                                 events: [],
                                 feed_license: 'daily',
                                 name: 'Singapore Index',
-                                symbol: 'STI',
+                                underlying_symbol: 'STI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3095,7 +3095,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'Belgian Index',
-                                symbol: 'BFX',
+                                underlying_symbol: 'BFX',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3106,7 +3106,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'Dutch Index',
-                                symbol: 'AEX',
+                                underlying_symbol: 'AEX',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3117,7 +3117,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'French Index',
-                                symbol: 'FCHI',
+                                underlying_symbol: 'FCHI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3130,7 +3130,7 @@ const sunday_trading_times = {
                                 events: [],
                                 feed_license: 'delayed',
                                 name: 'German Index',
-                                symbol: 'GDAXI',
+                                underlying_symbol: 'GDAXI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3143,7 +3143,7 @@ const sunday_trading_times = {
                                 events: [],
                                 feed_license: 'delayed',
                                 name: 'Irish Index',
-                                symbol: 'ISEQ',
+                                underlying_symbol: 'ISEQ',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3156,7 +3156,7 @@ const sunday_trading_times = {
                                 events: [],
                                 feed_license: 'delayed',
                                 name: 'Norwegian Index',
-                                symbol: 'OBX',
+                                underlying_symbol: 'OBX',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3174,7 +3174,7 @@ const sunday_trading_times = {
                                 ],
                                 feed_license: 'delayed',
                                 name: 'South African Index',
-                                symbol: 'TOP40',
+                                underlying_symbol: 'TOP40',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3187,7 +3187,7 @@ const sunday_trading_times = {
                                 events: [],
                                 feed_license: 'daily',
                                 name: 'Swiss Index',
-                                symbol: 'SSMI',
+                                underlying_symbol: 'SSMI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3210,7 +3210,7 @@ const sunday_trading_times = {
                                 ],
                                 feed_license: 'chartonly',
                                 name: 'US Index',
-                                symbol: 'SPC',
+                                underlying_symbol: 'SPC',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3233,7 +3233,7 @@ const sunday_trading_times = {
                                 ],
                                 feed_license: 'chartonly',
                                 name: 'Dubai Index',
-                                symbol: 'DFMGI',
+                                underlying_symbol: 'DFMGI',
                                 times: {
                                     close: ['09:45:00'],
                                     open: ['06:00:00'],
@@ -3249,7 +3249,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'Australian OTC Index',
-                                symbol: 'OTC_AS51',
+                                underlying_symbol: 'OTC_AS51',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3260,7 +3260,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'Dutch OTC Index',
-                                symbol: 'OTC_AEX',
+                                underlying_symbol: 'OTC_AEX',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3271,7 +3271,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'Euro 50 OTC Index',
-                                symbol: 'OTC_SX5E',
+                                underlying_symbol: 'OTC_SX5E',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3282,7 +3282,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'French OTC Index',
-                                symbol: 'OTC_FCHI',
+                                underlying_symbol: 'OTC_FCHI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3293,7 +3293,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'German OTC Index',
-                                symbol: 'OTC_GDAXI',
+                                underlying_symbol: 'OTC_GDAXI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3309,7 +3309,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'Hong Kong OTC Index',
-                                symbol: 'OTC_HSI',
+                                underlying_symbol: 'OTC_HSI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3329,7 +3329,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'Japanese OTC Index',
-                                symbol: 'OTC_N225',
+                                underlying_symbol: 'OTC_N225',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3340,7 +3340,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'Swiss OTC Index',
-                                symbol: 'OTC_SSMI',
+                                underlying_symbol: 'OTC_SSMI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3356,7 +3356,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'UK OTC Index',
-                                symbol: 'OTC_FTSE',
+                                underlying_symbol: 'OTC_FTSE',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3372,7 +3372,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'US OTC Index',
-                                symbol: 'OTC_SPC',
+                                underlying_symbol: 'OTC_SPC',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3388,7 +3388,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'US Tech 100 OTC Index',
-                                symbol: 'OTC_NDX',
+                                underlying_symbol: 'OTC_NDX',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3404,7 +3404,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'Wall Street OTC Index',
-                                symbol: 'OTC_DJI',
+                                underlying_symbol: 'OTC_DJI',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3434,7 +3434,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'Gold/USD',
-                                symbol: 'frxXAUUSD',
+                                underlying_symbol: 'frxXAUUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3454,7 +3454,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'Palladium/USD',
-                                symbol: 'frxXPDUSD',
+                                underlying_symbol: 'frxXPDUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3474,7 +3474,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'Platinum/USD',
-                                symbol: 'frxXPTUSD',
+                                underlying_symbol: 'frxXPTUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3494,7 +3494,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'Silver/USD',
-                                symbol: 'frxXAGUSD',
+                                underlying_symbol: 'frxXAGUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3515,7 +3515,7 @@ const sunday_trading_times = {
                                     },
                                 ],
                                 name: 'Oil/USD',
-                                symbol: 'frxBROUSD',
+                                underlying_symbol: 'frxBROUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -3536,7 +3536,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 10 Index',
-                                symbol: 'R_10',
+                                underlying_symbol: 'R_10',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3547,7 +3547,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 25 Index',
-                                symbol: 'R_25',
+                                underlying_symbol: 'R_25',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3558,7 +3558,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 50 Index',
-                                symbol: 'R_50',
+                                underlying_symbol: 'R_50',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3569,7 +3569,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 75 Index',
-                                symbol: 'R_75',
+                                underlying_symbol: 'R_75',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3580,7 +3580,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 100 Index',
-                                symbol: 'R_100',
+                                underlying_symbol: 'R_100',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3596,7 +3596,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'Bear Market Index',
-                                symbol: 'RDBEAR',
+                                underlying_symbol: 'RDBEAR',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3607,7 +3607,7 @@ const sunday_trading_times = {
                             {
                                 events: [],
                                 name: 'Bull Market Index',
-                                symbol: 'RDBULL',
+                                underlying_symbol: 'RDBULL',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3644,7 +3644,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/JPY',
-                                symbol: 'frxAUDJPY',
+                                underlying_symbol: 'frxAUDJPY',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3660,7 +3660,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/USD',
-                                symbol: 'frxAUDUSD',
+                                underlying_symbol: 'frxAUDUSD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3676,7 +3676,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/AUD',
-                                symbol: 'frxEURAUD',
+                                underlying_symbol: 'frxEURAUD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3692,7 +3692,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/CAD',
-                                symbol: 'frxEURCAD',
+                                underlying_symbol: 'frxEURCAD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3708,7 +3708,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/CHF',
-                                symbol: 'frxEURCHF',
+                                underlying_symbol: 'frxEURCHF',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3724,7 +3724,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/GBP',
-                                symbol: 'frxEURGBP',
+                                underlying_symbol: 'frxEURGBP',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3740,7 +3740,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/JPY',
-                                symbol: 'frxEURJPY',
+                                underlying_symbol: 'frxEURJPY',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3756,7 +3756,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/USD',
-                                symbol: 'frxEURUSD',
+                                underlying_symbol: 'frxEURUSD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3772,7 +3772,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/AUD',
-                                symbol: 'frxGBPAUD',
+                                underlying_symbol: 'frxGBPAUD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3788,7 +3788,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/JPY',
-                                symbol: 'frxGBPJPY',
+                                underlying_symbol: 'frxGBPJPY',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3804,7 +3804,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/USD',
-                                symbol: 'frxGBPUSD',
+                                underlying_symbol: 'frxGBPUSD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3820,7 +3820,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/CAD',
-                                symbol: 'frxUSDCAD',
+                                underlying_symbol: 'frxUSDCAD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3836,7 +3836,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/CHF',
-                                symbol: 'frxUSDCHF',
+                                underlying_symbol: 'frxUSDCHF',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3852,7 +3852,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/JPY',
-                                symbol: 'frxUSDJPY',
+                                underlying_symbol: 'frxUSDJPY',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3873,7 +3873,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/CAD',
-                                symbol: 'frxAUDCAD',
+                                underlying_symbol: 'frxAUDCAD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3889,7 +3889,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/CHF',
-                                symbol: 'frxAUDCHF',
+                                underlying_symbol: 'frxAUDCHF',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3905,7 +3905,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD/NZD',
-                                symbol: 'frxAUDNZD',
+                                underlying_symbol: 'frxAUDNZD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3921,7 +3921,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR/NZD',
-                                symbol: 'frxEURNZD',
+                                underlying_symbol: 'frxEURNZD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3937,7 +3937,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/CAD',
-                                symbol: 'frxGBPCAD',
+                                underlying_symbol: 'frxGBPCAD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3953,7 +3953,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/CHF',
-                                symbol: 'frxGBPCHF',
+                                underlying_symbol: 'frxGBPCHF',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3969,7 +3969,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/NOK',
-                                symbol: 'frxGBPNOK',
+                                underlying_symbol: 'frxGBPNOK',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -3985,7 +3985,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/NZD',
-                                symbol: 'frxGBPNZD',
+                                underlying_symbol: 'frxGBPNZD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4001,7 +4001,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP/PLN',
-                                symbol: 'frxGBPPLN',
+                                underlying_symbol: 'frxGBPPLN',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4017,7 +4017,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'NZD/JPY',
-                                symbol: 'frxNZDJPY',
+                                underlying_symbol: 'frxNZDJPY',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4033,7 +4033,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'NZD/USD',
-                                symbol: 'frxNZDUSD',
+                                underlying_symbol: 'frxNZDUSD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4049,7 +4049,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/MXN',
-                                symbol: 'frxUSDMXN',
+                                underlying_symbol: 'frxUSDMXN',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4065,7 +4065,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/NOK',
-                                symbol: 'frxUSDNOK',
+                                underlying_symbol: 'frxUSDNOK',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4081,7 +4081,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/PLN',
-                                symbol: 'frxUSDPLN',
+                                underlying_symbol: 'frxUSDPLN',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4097,7 +4097,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'USD/SEK',
-                                symbol: 'frxUSDSEK',
+                                underlying_symbol: 'frxUSDSEK',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4123,7 +4123,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'AUD Basket',
-                                symbol: 'WLDAUD',
+                                underlying_symbol: 'WLDAUD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4139,7 +4139,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'EUR Basket',
-                                symbol: 'WLDEUR',
+                                underlying_symbol: 'WLDEUR',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4155,7 +4155,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'GBP Basket',
-                                symbol: 'WLDGBP',
+                                underlying_symbol: 'WLDGBP',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4171,7 +4171,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'USD Basket',
-                                symbol: 'WLDUSD',
+                                underlying_symbol: 'WLDUSD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4192,7 +4192,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'Gold Basket',
-                                symbol: 'WLDXAU',
+                                underlying_symbol: 'WLDXAU',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4215,7 +4215,7 @@ const monday_trading_times = {
                                 events: [],
                                 feed_license: 'chartonly',
                                 name: 'Australian Index',
-                                symbol: 'AS51',
+                                underlying_symbol: 'AS51',
                                 times: {
                                     close: ['06:00:00'],
                                     open: ['00:00:00'],
@@ -4237,7 +4237,7 @@ const monday_trading_times = {
                                 ],
                                 feed_license: 'delayed',
                                 name: 'Bombay Index',
-                                symbol: 'BSESENSEX30',
+                                underlying_symbol: 'BSESENSEX30',
                                 times: {
                                     close: ['10:00:00'],
                                     open: ['03:45:00'],
@@ -4255,7 +4255,7 @@ const monday_trading_times = {
                                 ],
                                 feed_license: 'delayed',
                                 name: 'Hong Kong Index',
-                                symbol: 'HSI',
+                                underlying_symbol: 'HSI',
                                 times: {
                                     close: ['03:59:00', '07:40:00'],
                                     open: ['01:30:00', '05:00:00'],
@@ -4277,7 +4277,7 @@ const monday_trading_times = {
                                 ],
                                 feed_license: 'daily',
                                 name: 'Japanese Index',
-                                symbol: 'N225',
+                                underlying_symbol: 'N225',
                                 times: {
                                     close: ['02:30:00', '06:00:00'],
                                     open: ['00:00:00', '03:30:00'],
@@ -4290,7 +4290,7 @@ const monday_trading_times = {
                                 events: [],
                                 feed_license: 'daily',
                                 name: 'Singapore Index',
-                                symbol: 'STI',
+                                underlying_symbol: 'STI',
                                 times: {
                                     close: ['09:00:00'],
                                     open: ['01:00:00'],
@@ -4306,7 +4306,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'Belgian Index',
-                                symbol: 'BFX',
+                                underlying_symbol: 'BFX',
                                 times: {
                                     close: ['15:30:00'],
                                     open: ['07:00:00'],
@@ -4317,7 +4317,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'Dutch Index',
-                                symbol: 'AEX',
+                                underlying_symbol: 'AEX',
                                 times: {
                                     close: ['15:30:00'],
                                     open: ['07:00:00'],
@@ -4328,7 +4328,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'French Index',
-                                symbol: 'FCHI',
+                                underlying_symbol: 'FCHI',
                                 times: {
                                     close: ['15:30:00'],
                                     open: ['07:00:00'],
@@ -4341,7 +4341,7 @@ const monday_trading_times = {
                                 events: [],
                                 feed_license: 'delayed',
                                 name: 'German Index',
-                                symbol: 'GDAXI',
+                                underlying_symbol: 'GDAXI',
                                 times: {
                                     close: ['15:30:00'],
                                     open: ['07:00:00'],
@@ -4354,7 +4354,7 @@ const monday_trading_times = {
                                 events: [],
                                 feed_license: 'delayed',
                                 name: 'Irish Index',
-                                symbol: 'ISEQ',
+                                underlying_symbol: 'ISEQ',
                                 times: {
                                     close: ['15:30:00'],
                                     open: ['07:00:00'],
@@ -4367,7 +4367,7 @@ const monday_trading_times = {
                                 events: [],
                                 feed_license: 'delayed',
                                 name: 'Norwegian Index',
-                                symbol: 'OBX',
+                                underlying_symbol: 'OBX',
                                 times: {
                                     close: ['14:30:00'],
                                     open: ['07:00:00'],
@@ -4385,7 +4385,7 @@ const monday_trading_times = {
                                 ],
                                 feed_license: 'delayed',
                                 name: 'South African Index',
-                                symbol: 'TOP40',
+                                underlying_symbol: 'TOP40',
                                 times: {
                                     close: ['14:50:00'],
                                     open: ['07:00:00'],
@@ -4398,7 +4398,7 @@ const monday_trading_times = {
                                 events: [],
                                 feed_license: 'daily',
                                 name: 'Swiss Index',
-                                symbol: 'SSMI',
+                                underlying_symbol: 'SSMI',
                                 times: {
                                     close: ['15:20:00'],
                                     open: ['07:00:00'],
@@ -4421,7 +4421,7 @@ const monday_trading_times = {
                                 ],
                                 feed_license: 'chartonly',
                                 name: 'US Index',
-                                symbol: 'SPC',
+                                underlying_symbol: 'SPC',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['13:30:00'],
@@ -4444,7 +4444,7 @@ const monday_trading_times = {
                                 ],
                                 feed_license: 'chartonly',
                                 name: 'Dubai Index',
-                                symbol: 'DFMGI',
+                                underlying_symbol: 'DFMGI',
                                 times: {
                                     close: ['09:45:00'],
                                     open: ['06:00:00'],
@@ -4460,7 +4460,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'Australian OTC Index',
-                                symbol: 'OTC_AS51',
+                                underlying_symbol: 'OTC_AS51',
                                 times: {
                                     close: ['06:30:00', '20:00:00'],
                                     open: ['00:00:00', '07:30:00'],
@@ -4471,7 +4471,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'Dutch OTC Index',
-                                symbol: 'OTC_AEX',
+                                underlying_symbol: 'OTC_AEX',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['06:00:00'],
@@ -4482,7 +4482,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'Euro 50 OTC Index',
-                                symbol: 'OTC_SX5E',
+                                underlying_symbol: 'OTC_SX5E',
                                 times: {
                                     close: ['19:00:00'],
                                     open: ['06:00:00'],
@@ -4493,7 +4493,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'French OTC Index',
-                                symbol: 'OTC_FCHI',
+                                underlying_symbol: 'OTC_FCHI',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['06:00:00'],
@@ -4504,7 +4504,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'German OTC Index',
-                                symbol: 'OTC_GDAXI',
+                                underlying_symbol: 'OTC_GDAXI',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['06:00:00'],
@@ -4520,7 +4520,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'Hong Kong OTC Index',
-                                symbol: 'OTC_HSI',
+                                underlying_symbol: 'OTC_HSI',
                                 times: {
                                     close: ['04:00:00', '08:00:00'],
                                     open: ['01:30:00', '05:00:00'],
@@ -4540,7 +4540,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'Japanese OTC Index',
-                                symbol: 'OTC_N225',
+                                underlying_symbol: 'OTC_N225',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['00:00:00'],
@@ -4551,7 +4551,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'Swiss OTC Index',
-                                symbol: 'OTC_SSMI',
+                                underlying_symbol: 'OTC_SSMI',
                                 times: {
                                     close: ['16:00:00'],
                                     open: ['07:00:00'],
@@ -4567,7 +4567,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'UK OTC Index',
-                                symbol: 'OTC_FTSE',
+                                underlying_symbol: 'OTC_FTSE',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -4583,7 +4583,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'US OTC Index',
-                                symbol: 'OTC_SPC',
+                                underlying_symbol: 'OTC_SPC',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['06:00:00'],
@@ -4599,7 +4599,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'US Tech 100 OTC Index',
-                                symbol: 'OTC_NDX',
+                                underlying_symbol: 'OTC_NDX',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['06:00:00'],
@@ -4615,7 +4615,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'Wall Street OTC Index',
-                                symbol: 'OTC_DJI',
+                                underlying_symbol: 'OTC_DJI',
                                 times: {
                                     close: ['20:00:00'],
                                     open: ['06:00:00'],
@@ -4645,7 +4645,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'Gold/USD',
-                                symbol: 'frxXAUUSD',
+                                underlying_symbol: 'frxXAUUSD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4665,7 +4665,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'Palladium/USD',
-                                symbol: 'frxXPDUSD',
+                                underlying_symbol: 'frxXPDUSD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4685,7 +4685,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'Platinum/USD',
-                                symbol: 'frxXPTUSD',
+                                underlying_symbol: 'frxXPTUSD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4705,7 +4705,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'Silver/USD',
-                                symbol: 'frxXAGUSD',
+                                underlying_symbol: 'frxXAGUSD',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4726,7 +4726,7 @@ const monday_trading_times = {
                                     },
                                 ],
                                 name: 'Oil/USD',
-                                symbol: 'frxBROUSD',
+                                underlying_symbol: 'frxBROUSD',
                                 times: {
                                     close: ['--'],
                                     open: ['--'],
@@ -4747,7 +4747,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 10 Index',
-                                symbol: 'R_10',
+                                underlying_symbol: 'R_10',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4758,7 +4758,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 25 Index',
-                                symbol: 'R_25',
+                                underlying_symbol: 'R_25',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4769,7 +4769,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 50 Index',
-                                symbol: 'R_50',
+                                underlying_symbol: 'R_50',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4780,7 +4780,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 75 Index',
-                                symbol: 'R_75',
+                                underlying_symbol: 'R_75',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4791,7 +4791,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'Volatility 100 Index',
-                                symbol: 'R_100',
+                                underlying_symbol: 'R_100',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4807,7 +4807,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'Bear Market Index',
-                                symbol: 'RDBEAR',
+                                underlying_symbol: 'RDBEAR',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],
@@ -4818,7 +4818,7 @@ const monday_trading_times = {
                             {
                                 events: [],
                                 name: 'Bull Market Index',
-                                symbol: 'RDBULL',
+                                underlying_symbol: 'RDBULL',
                                 times: {
                                     close: ['23:59:59'],
                                     open: ['00:00:00'],

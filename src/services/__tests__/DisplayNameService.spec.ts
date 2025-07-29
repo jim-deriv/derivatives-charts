@@ -1,12 +1,52 @@
 import { expect } from 'chai';
 import { DisplayNameService } from '../DisplayNameService';
+import { DISPLAY_NAME_MAPPINGS } from '../../config/displayNames';
 
 describe('DisplayNameService', () => {
     let service: DisplayNameService;
+    let originalMappings: any;
 
     beforeEach(() => {
+        // Backup original mappings
+        originalMappings = {
+            symbols: { ...DISPLAY_NAME_MAPPINGS.symbols },
+            markets: { ...DISPLAY_NAME_MAPPINGS.markets },
+            submarkets: { ...DISPLAY_NAME_MAPPINGS.submarkets },
+            subgroups: { ...DISPLAY_NAME_MAPPINGS.subgroups },
+        };
+
         service = new DisplayNameService();
         service.clearCache(); // Clear cache before each test
+    });
+
+    afterEach(() => {
+        // Restore original mappings
+        Object.assign(DISPLAY_NAME_MAPPINGS.symbols, originalMappings.symbols);
+        Object.assign(DISPLAY_NAME_MAPPINGS.markets, originalMappings.markets);
+        Object.assign(DISPLAY_NAME_MAPPINGS.submarkets, originalMappings.submarkets);
+        Object.assign(DISPLAY_NAME_MAPPINGS.subgroups, originalMappings.subgroups);
+
+        // Clear any added properties
+        for (const key in DISPLAY_NAME_MAPPINGS.symbols) {
+            if (!(key in originalMappings.symbols)) {
+                delete DISPLAY_NAME_MAPPINGS.symbols[key];
+            }
+        }
+        for (const key in DISPLAY_NAME_MAPPINGS.markets) {
+            if (!(key in originalMappings.markets)) {
+                delete DISPLAY_NAME_MAPPINGS.markets[key];
+            }
+        }
+        for (const key in DISPLAY_NAME_MAPPINGS.submarkets) {
+            if (!(key in originalMappings.submarkets)) {
+                delete DISPLAY_NAME_MAPPINGS.submarkets[key];
+            }
+        }
+        for (const key in DISPLAY_NAME_MAPPINGS.subgroups) {
+            if (!(key in originalMappings.subgroups)) {
+                delete DISPLAY_NAME_MAPPINGS.subgroups[key];
+            }
+        }
     });
 
     describe('getSymbolDisplayName', () => {
@@ -29,7 +69,7 @@ describe('DisplayNameService', () => {
             const options = { cacheResults: true };
             const result1 = service.getSymbolDisplayName('R_10', options);
             const result2 = service.getSymbolDisplayName('R_10', options);
-            
+
             expect(result1).to.equal(result2);
             expect(service.getCacheStats().size).to.be.greaterThan(0);
         });
@@ -37,10 +77,12 @@ describe('DisplayNameService', () => {
         it('should log missing mappings when enabled', () => {
             let loggedMessage = '';
             const originalWarn = console.warn;
-            console.warn = (message: string) => { loggedMessage = message; };
+            console.warn = (message: string) => {
+                loggedMessage = message;
+            };
 
             service.getSymbolDisplayName('MISSING_SYMBOL', { logMissing: true });
-            
+
             expect(loggedMessage).to.include('Missing symbol display name mapping for: MISSING_SYMBOL');
             console.warn = originalWarn;
         });
@@ -128,13 +170,13 @@ describe('DisplayNameService', () => {
         });
 
         it('should clear cache when adding mapping', () => {
-            service.getSymbolDisplayName('R_10', { cacheResults: true });
+            service.getSymbolDisplayName('TEST_SYMBOL', { cacheResults: true });
             expect(service.getCacheStats().size).to.be.greaterThan(0);
-            
-            service.addMapping('symbol', 'R_10', 'Updated Name');
+
+            service.addMapping('symbol', 'TEST_SYMBOL', 'Updated Test Name');
             // Cache should be cleared for this specific item
-            const result = service.getSymbolDisplayName('R_10');
-            expect(result).to.equal('Updated Name');
+            const result = service.getSymbolDisplayName('TEST_SYMBOL');
+            expect(result).to.equal('Updated Test Name');
         });
     });
 
@@ -142,18 +184,18 @@ describe('DisplayNameService', () => {
         it('should return display names for multiple symbols', () => {
             const codes = ['R_10', 'R_25', 'UNKNOWN'];
             const result = service.batchGetDisplayNames('symbol', codes);
-            
-            expect(result['R_10']).to.equal('Volatility 10 Index');
-            expect(result['R_25']).to.equal('Volatility 25 Index');
-            expect(result['UNKNOWN']).to.equal('UNKNOWN');
+
+            expect(result.R_10).to.equal('Volatility 10 Index');
+            expect(result.R_25).to.equal('Volatility 25 Index');
+            expect(result.UNKNOWN).to.equal('Unknown'); // Formatted fallback
         });
 
         it('should return display names for multiple markets', () => {
             const codes = ['forex', 'synthetic_index'];
             const result = service.batchGetDisplayNames('market', codes);
-            
-            expect(result['forex']).to.equal('Forex');
-            expect(result['synthetic_index']).to.equal('Derived');
+
+            expect(result.forex).to.equal('Forex');
+            expect(result.synthetic_index).to.equal('Derived');
         });
     });
 
@@ -178,7 +220,7 @@ describe('DisplayNameService', () => {
         it('should clear all cached results', () => {
             service.getSymbolDisplayName('R_10', { cacheResults: true });
             expect(service.getCacheStats().size).to.be.greaterThan(0);
-            
+
             service.clearCache();
             expect(service.getCacheStats().size).to.equal(0);
         });
@@ -188,14 +230,14 @@ describe('DisplayNameService', () => {
         it('should track missing mappings when logging is enabled', () => {
             const originalWarn = console.warn;
             console.warn = () => {}; // Suppress console output
-            
+
             service.getSymbolDisplayName('MISSING1', { logMissing: true });
             service.getMarketDisplayName('MISSING2', { logMissing: true });
-            
+
             const missing = service.getMissingMappings();
             expect(missing).to.include('symbol:MISSING1');
             expect(missing).to.include('market:MISSING2');
-            
+
             console.warn = originalWarn;
         });
     });
@@ -204,14 +246,14 @@ describe('DisplayNameService', () => {
         it('should return correct cache statistics', () => {
             const originalWarn = console.warn;
             console.warn = () => {}; // Suppress console output
-            
+
             service.getSymbolDisplayName('R_10', { cacheResults: true });
-            service.getSymbolDisplayName('MISSING', { logMissing: true });
-            
+            service.getSymbolDisplayName('MISSING', { logMissing: true, cacheResults: false });
+
             const stats = service.getCacheStats();
             expect(stats.size).to.equal(1);
             expect(stats.missingCount).to.equal(1);
-            
+
             console.warn = originalWarn;
         });
     });
