@@ -192,7 +192,7 @@ export default class ActiveSymbols {
                 subgroup: s.subgroup,
                 submarket: s.submarket,
                 exchange_is_open: !!s.exchange_is_open,
-                decimal_places: (symbolData.pip_size || s.pip).toString().length - 2,
+                decimal_places: (symbolData.pip_size ?? s.pip).toString().length - 2,
                 // Add display names for UI
                 displayName: displayNames.symbolDisplayName,
                 marketDisplayName: displayNames.marketDisplayName,
