@@ -208,6 +208,7 @@ import HKG50 from '../../sass/icons/active-symbols/stock-indices/ic-hong-kong-50
 import DE40 from '../../sass/icons/active-symbols/stock-indices/ic-germany-40.svg';
 import FR40 from '../../sass/icons/active-symbols/stock-indices/ic-france-40.svg';
 import EUR50 from '../../sass/icons/active-symbols/stock-indices/ic-euro-50.svg';
+import ES35 from '../../sass/icons/active-symbols/stock-indices/ic-spain-35.svg';
 import AUD200 from '../../sass/icons/active-symbols/stock-indices/ic-australian-200.svg';
 
 import OTCBadge from '../../sass/icons/active-symbols/ic-otcbadge.svg';
@@ -547,6 +548,7 @@ export const ItemIconMap = {
     FCHI: FlagIconMap.French,
     SSMI: FlagIconMap.CHF,
     GDAXI: FlagIconMap.German,
+    ES35: Wrapper(ES35),
     /* Commodities */
     frxBROUSD: Wrapper(OilUSD),
     frxXAUUSD: MetalIcon,
@@ -628,6 +630,7 @@ export const ItemIconMap = {
     OTC_SSMI: Wrapper(CHF20),
     OTC_HSI: Wrapper(HKG50),
     OTC_AS51: Wrapper(AUD200),
+    OTC_IBEX35: Wrapper(ES35),
 };
 
 const createCompositeIcon = (A: TIcon, B: TIcon, icId: string) => {

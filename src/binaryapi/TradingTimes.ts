@@ -81,7 +81,7 @@ class TradingTimes {
                     nextUpdate = nextUpdateDate;
                 }
                 const waitPeriod =
-                    ((nextUpdate as unknown) as number) - ((this._serverTime.getLocalDate() as unknown) as number);
+                    (nextUpdate as unknown as number) - (this._serverTime.getLocalDate() as unknown as number);
                 this._updateTimer = setTimeout(periodicUpdate, waitPeriod);
             };
             await periodicUpdate();
@@ -102,7 +102,7 @@ class TradingTimes {
         let response: Partial<TradingTimesResponse> = {};
 
         if (!this._tradingTimesMap && this._params.tradingTimes) {
-            response = (this._params.tradingTimes as unknown) as Partial<TradingTimesResponse>;
+            response = this._params.tradingTimes as unknown as Partial<TradingTimesResponse>;
         } else if (this._params.enable !== false) {
             response = await this._api.getTradingTimes(this.lastUpdateDate);
         } else {
@@ -139,8 +139,9 @@ class TradingTimes {
                         delay_amount,
                         times,
                         trading_days,
-                    // @ts-expect-error - this will be resolved after underlying_symbol is added to the type
-                        underlying_symbol: symbol,
+                        // @ts-expect-error - this will be resolved after underlying_symbol is added to the type
+                        underlying_symbol,
+                        symbol,
                     } = symbolObj as TTradingTimesSymbol;
                     const { open, close } = times;
                     let isClosedToday = false;
@@ -204,7 +205,8 @@ class TradingTimes {
                             close: getUTCDate(close[idx]),
                         }));
                     }
-                    this._tradingTimesMap[symbol] = {
+                    const symbolKey = underlying_symbol ?? symbol;
+                    this._tradingTimesMap[symbolKey] = {
                         feed_license,
                         isClosedToday,
                         holidays,
@@ -253,16 +255,8 @@ class TradingTimes {
 
         if (!this._tradingTimesMap) return;
 
-        const {
-            times,
-            feed_license,
-            isOpenAllDay,
-            isClosedAllDay,
-            holidays,
-            closes_early,
-            opens_late,
-            isClosedToday,
-        } = this._tradingTimesMap[symbol];
+        const { times, feed_license, isOpenAllDay, isClosedAllDay, holidays, closes_early, opens_late, isClosedToday } =
+            this._tradingTimesMap[symbol];
         if (
             isClosedAllDay ||
             feed_license === TradingTimes.FEED_UNAVAILABLE ||

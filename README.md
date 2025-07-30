@@ -4,7 +4,7 @@
 
 SmartCharts is both the name of the app ([charts.binary.com](https://charts.binary.com/)) and the charting library.
 
-[![npm](https://img.shields.io/badge/npm->=9-blue)](https://www.npmjs.com/package/@deriv/deriv-charts) ![node](https://img.shields.io/badge/node-%3E%3D18-blue.svg)
+[![npm](https://img.shields.io/badge/npm->=9-blue)](https://www.npmjs.com/package/@deriv-com/derivatives-charts) ![node](https://img.shields.io/badge/node-%3E%3D18-blue.svg)
 
 ## In this document:
 
@@ -75,26 +75,26 @@ You can install the library using one of the following commands:
 Using npm:
 
 ```bash
-$ npm install @deriv/deriv-chart
+$ npm install @deriv-com/derivatives-charts
 ```
 
 Using yarn:
 
 ```bash
-$ yarn add @deriv/deriv-chart
+$ yarn add @deriv-com/derivatives-charts
 ```
 
 **Important Note:** the license for the library is tied to the `binary.com` domain name; it will not work in github pages.
 
 You can add the library to your project using the following commands:
 
-    yarn add @deriv/deriv-chart      # Release
-    yarn add @deriv/deriv-chart@beta # Beta
+    yarn add @deriv-com/derivatives-charts      # Release
+    yarn add @deriv-com/derivatives-charts@beta # Beta
 
 You can refer to library usage inside `app/index.jsx`:
 
 ```jsx
-import { SmartChart } from '@deriv/deriv-chart';
+import { SmartChart } from '@deriv-com/derivatives-charts';
 
 class App extends React.Component {
     render() {
@@ -120,7 +120,7 @@ Some important notes on your webpack.config.js (refer to `app/webpack.config.js`
 - smartcharts consist of a few chunks (which has filenames `*.smartcharts.*`), which it downloads asynchronously during runtime. Therefore, it needs to know where the library user places its chunks via the `setSmartChartsPublicPath` function:
 
 ```js
-import { setSmartChartsPublicPath } from "@deriv/deriv-chart";
+import { setSmartChartsPublicPath } from "@deriv-com/derivatives-charts";
 
 // SmartCharts chunk are deployed to https://mysite.com/dist/*
 setSmartChartsPublicPath("/dist/");
@@ -130,8 +130,8 @@ We can use the `copy-webpack-plugin` webpack plugin to copy over SmartCharts chu
 
 ```js
 new CopyWebpackPlugin([
-  { from: "./node_modules/@deriv/deriv-chart/dist/*.smartcharts.*" },
-  { from: "./node_modules/@deriv/deriv-chart/dist/smartcharts.css" },
+  { from: "./node_modules/@deriv-com/derivatives-charts/dist/*.smartcharts.*" },
+  { from: "./node_modules/@deriv-com/derivatives-charts/dist/smartcharts.css" },
 ]);
 ```
 ### API
@@ -255,7 +255,7 @@ Attributes marked with `*` are **mandatory**:
 Use `FastMarker` to render given components inside the chart.
 Markers provide a way for developers to place DOM elements that are positioned based on date, values or tick location inside the chart. Also, please note that this `FastMarker` implementation does not factor the width and height of the marker: this is expensive to calculate, so we expect you to offset this in CSS.
 `FastMarker` will keep the marker position on the chart.
-It can be imported from `@deriv/deriv-chart` package either as `FastMarker`, or simply as `Marker`.
+It can be imported from `@deriv-com/derivatives-charts` package either as `FastMarker`, or simply as `Marker`.
 
 ```jsx
 <SmartChart>
@@ -306,7 +306,7 @@ We offer library users full control on deciding which of the top widgets and cha
 For example, we want to remove all the chart control buttons, and for top widgets to just show the comparison list (refer `app/index.jsx`):
 
 ```jsx
-import { ChartMode, ToolbarWidget } from "@deriv/deriv-chart";
+import { ChartMode, ToolbarWidget } from "@deriv-com/derivatives-charts";
 
 const renderTopWidgets = () => (
   <React.Fragment>
@@ -509,7 +509,7 @@ We organise the development in Trello. Here is the standard workflow of how a fe
 
 Some issues only show up for library users, so it is helpful to test the NPM package before deploying it to library users. You can do this by building the library directly into the node_modules directory of an app that uses the SmartCharts library. For example to test the library build on binary-static you can execute:
 
-    npm run watch '../binary-static/node_modules/@deriv/deriv-chart/dist'
+    npm run watch '../binary-static/node_modules/@deriv-com/derivatives-charts/dist'
 
 Now each time you make any change, it will overwrite the SmartCharts library inside the `node_modules` folder.
 
