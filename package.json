@@ -27,6 +27,7 @@
         "sourceMap": false,
         "instrument": false
     },
+    "private": false,
     "scripts": {
         "build": "rimraf dist && cross-env NODE_ENV=production webpack --mode=production --progress",
         "build:app": "cross-env BUILD_MODE='app' npm run build",
