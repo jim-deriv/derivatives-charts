@@ -1,8 +1,8 @@
 <h1 align="center">
-  SmartCharts
+  DerivitivesCharts
 </h1>
 
-SmartCharts is both the name of the app ([charts.binary.com](https://charts.binary.com/)) and the charting library.
+DerivitivesCharts is both the name of the app ([charts.binary.com](https://charts.binary.com/)) and the charting library.
 
 [![npm](https://img.shields.io/badge/npm->=9-blue)](https://www.npmjs.com/package/@deriv-com/derivatives-charts) ![node](https://img.shields.io/badge/node-%3E%3D18-blue.svg)
 
