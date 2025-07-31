@@ -44,10 +44,7 @@ jobs:
 
             - name: Build derivatives-charts
               run: cd derivatives-charts && npm run build
-            - name: Prepublish
-              run: cd derivatives-charts && npm run prepublish
             - name: Release derivatives-charts
-              if: success()
               env:
                   CI: true
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
