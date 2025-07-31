@@ -1,5 +1,5 @@
 <h1 align="center">
-  SmartCharts
+  DerivitiveCharts
 </h1>
 
 SmartCharts is both the name of the app ([charts.binary.com](https://charts.binary.com/)) and the charting library.
