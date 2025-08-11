@@ -50,3 +50,61 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
               run: cd derivatives-charts && npx semantic-release
+
+    update_chart_version_in_derivatives_trader:
+        runs-on: Ubuntu-latest
+        permissions:
+            pull-requests: write
+        needs: [build_and_publish_derivatives_charts]
+        steps:
+            - name: Checkout derivatives-trader
+              uses: 'deriv-com/derivatives-charts/.github/actions/checkout@master'
+              with:
+                  repository: 'deriv-com/derivatives-trader'
+                  path: derivatives-trader
+                  ref: master
+
+            - name: Setup Node
+              uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
+              with:
+                  node-version: 18.x
+
+            - name: Install jq
+              run: sudo apt-get install jq
+
+            - name: Get the new chart version
+              id: check_new_version
+              run: |
+                  new_version=$(npm show @deriv-com/derivatives-charts version)
+                  echo "new_version=$new_version" >> $GITHUB_OUTPUT
+            - name: Update root package.json
+              run: |
+                  cd derivatives-trader
+                  tmp=$(mktemp)
+                  jq --indent 4 ".dependencies[\"@deriv-com/derivatives-charts\"] = \"^${{ steps.check_new_version.outputs.new_version }}\"" package.json > "$tmp" && mv "$tmp" package.json
+            - name: Update core package.json
+              run: |
+                  cd derivatives-trader/packages/core
+                  tmp=$(mktemp)
+                  jq --indent 4 ".dependencies[\"@deriv-com/derivatives-charts\"] = \"^${{ steps.check_new_version.outputs.new_version }}\"" package.json > "$tmp" && mv "$tmp" package.json
+
+            - name: Update trader package.json
+              run: |
+                  cd derivatives-trader/packages/trader
+                  tmp=$(mktemp)
+                  jq --indent 4 ".dependencies[\"@deriv-com/derivatives-charts\"] = \"^${{ steps.check_new_version.outputs.new_version }}\"" package.json > "$tmp" && mv "$tmp" package.json
+            - name: Update root package-lock.json
+              run: |
+                  cd derivatives-trader
+                  npm run bootstrap:dev
+
+            - name: Create Pull Request to derivatives-trader
+              uses: peter-evans/create-pull-request@76c6f5c20e2111bfee3cd30fae52a25e410f5efc
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  commit-message: 'chore: update @deriv-com/derivatives-charts to ${{ steps.check_new_version.outputs.new_version }}'
+                  title: 'Update derivatives-charts to ${{ steps.check_new_version.outputs.new_version }}'
+                  body: 'This PR updates @deriv-com/derivatives-charts to ${{ steps.check_new_version.outputs.new_version }}'
+                  branch: 'chore/update-derivatives-charts-to-${{ steps.check_new_version.outputs.new_version }}'
+                  base: 'master'
+                  path: 'derivatives-trader'

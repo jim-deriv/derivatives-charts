@@ -73,14 +73,19 @@ export class TickHistoryFormatter {
     }
     static formatPOCTick(contract_info: ProposalOpenContract) {
         const { tick_stream = [], underlying = '' } = contract_info || {};
-        if (tick_stream.length && underlying) {
+        // @ts-expect-error the TContractInfo type are invalid
+        const underlying_symbol = contract_info?.underlying_symbol || '';
+        // Backward compatibility: Use underlying_symbol if available (new API), fallback to underlying (old API)
+        // This ensures compatibility with both old and new proposal_open_contract API responses
+        const symbol = underlying_symbol || underlying;
+        if (tick_stream.length && symbol) {
             return tick_stream.map(({ epoch = 0, tick, tick_display_value }) => ({
                 Date: getUTCDate(epoch),
                 Close: tick || 0,
                 tick: {
                     epoch,
                     quote: tick || 0,
-                    symbol: underlying,
+                    symbol,
                     pip_size: tick_display_value?.split('.')[1]?.length || 0,
                 },
             }));
