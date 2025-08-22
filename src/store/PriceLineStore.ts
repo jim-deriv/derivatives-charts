@@ -87,7 +87,6 @@ export default class PriceLineStore {
         this.mainStore.chartAdapter.painter.registerCallback(this.drawBarrier);
     };
 
-    // [AI]
     // Complete barrier freeze system - no jumping allowed
     _lastCalculatedTop: number | null = null;
     _lastQuoteForCalculation: number | null = null;
@@ -166,7 +165,6 @@ export default class PriceLineStore {
             }
         }
     }
-    // [/AI]
 
     destructor() {
         this.disposeDrawReaction?.();
@@ -391,7 +389,6 @@ export default class PriceLineStore {
         return Math.round(top) | 0;
     };
 
-    // [AI]
     // Override the top setter to use centralized stability
     set top(v) {
         this._updateBarrierPosition(v, 'direct-setter');
@@ -410,7 +407,6 @@ export default class PriceLineStore {
             }
         }
     };
-    // [/AI]
 
     onPriceChanged(callback: EventListener) {
         this._emitter.on(PriceLineStore.EVENT_PRICE_CHANGED, callback);

@@ -86,10 +86,8 @@ const Chart = React.forwardRef((props: TChartProps, ref) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [t.lang]);
 
-    // [AI]
     // Memoize defaultTopWidgets to prevent recreation on every render
     const defaultTopWidgets = React.useCallback(() => <ChartTitle />, []);
-    // [/AI]
 
     const {
         id,
@@ -107,7 +105,6 @@ const Chart = React.forwardRef((props: TChartProps, ref) => {
         contracts_array = [],
     } = props;
 
-    // [AI]
     // Create stable references that persist across renders for barriers
     const stableBarrierRef = React.useRef<typeof barriers>([]);
     const lastBarrierHashRef = React.useRef<string>('');
@@ -209,7 +206,6 @@ const Chart = React.forwardRef((props: TChartProps, ref) => {
             />
         ));
     }, [stableBarriers]);
-    // [/AI]
 
     const hasPosition = chartControlsWidgets && position && !isMobile;
     const TopWidgets = topWidgets || defaultTopWidgets;
@@ -230,7 +226,6 @@ const Chart = React.forwardRef((props: TChartProps, ref) => {
         chartAdapter.updateContracts(contracts_array);
     }, [contracts_array]);
 
-    // [AI]
     // Move conditional logic to useEffect to prevent re-renders during render phase
     React.useEffect(() => {
         // to always show price info on mobile screen
@@ -246,7 +241,6 @@ const Chart = React.forwardRef((props: TChartProps, ref) => {
         }),
         [historical, chartContainerHeight, isMobile]
     );
-    // [/AI]
 
     return (
         <div
