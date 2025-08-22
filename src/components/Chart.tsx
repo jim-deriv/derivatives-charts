@@ -27,18 +27,8 @@ import SettingsDialog from './SettingsDialog';
 import ScrollToRecent from './ScrollToRecent';
 
 const Chart = React.forwardRef((props: TChartProps, ref) => {
-    const {
-        chart,
-        drawTools,
-        studies,
-        chartSetting,
-        chartType,
-        state,
-        loader,
-        chartAdapter,
-        crosshair,
-        timeperiod,
-    } = useStores();
+    const { chart, drawTools, studies, chartSetting, chartType, state, loader, chartAdapter, crosshair, timeperiod } =
+        useStores();
     const { chartId, init, destroy, isChartAvailable, chartContainerHeight, containerWidth } = chart;
     const { setCrosshairState } = crosshair;
     const { settingsDialog: studiesSettingsDialog, restoreStudies, activeItems } = studies;
@@ -86,7 +76,7 @@ const Chart = React.forwardRef((props: TChartProps, ref) => {
 
     React.useEffect(() => {
         updateProps(props);
-    });
+    }, [props, updateProps]);
 
     const prevLang = usePrevious(t.lang);
     React.useEffect(() => {
@@ -96,7 +86,10 @@ const Chart = React.forwardRef((props: TChartProps, ref) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [t.lang]);
 
-    const defaultTopWidgets = () => <ChartTitle />;
+    // [AI]
+    // Memoize defaultTopWidgets to prevent recreation on every render
+    const defaultTopWidgets = React.useCallback(() => <ChartTitle />, []);
+    // [/AI]
 
     const {
         id,
@@ -113,6 +106,110 @@ const Chart = React.forwardRef((props: TChartProps, ref) => {
         historical,
         contracts_array = [],
     } = props;
+
+    // [AI]
+    // Create stable references that persist across renders for barriers
+    const stableBarrierRef = React.useRef<typeof barriers>([]);
+    const lastBarrierHashRef = React.useRef<string>('');
+
+    // Use useEffect to update barriers when they actually change, avoiding useMemo dependency issues
+    React.useEffect(() => {
+        // Create a hash of all barrier properties that matter for rendering
+        const barrierHash = barriers
+            .map(barrier => {
+                if (!barrier) return 'null';
+
+                const {
+                    high,
+                    low,
+                    color,
+                    lineStyle,
+                    shade,
+                    shadeColor,
+                    relative,
+                    draggable,
+                    hidePriceLines,
+                    hideBarrierLine,
+                    hideOffscreenLine,
+                    title,
+                    key,
+                } = barrier;
+                return JSON.stringify({
+                    high,
+                    low,
+                    color,
+                    lineStyle,
+                    shade,
+                    shadeColor,
+                    relative,
+                    draggable,
+                    hidePriceLines,
+                    hideBarrierLine,
+                    hideOffscreenLine,
+                    title,
+                    key,
+                });
+            })
+            .join('|');
+
+        // Only update the stable reference if the barrier properties have actually changed
+        if (barrierHash !== lastBarrierHashRef.current) {
+            // Barrier data actually changed, updating stable reference
+            lastBarrierHashRef.current = barrierHash;
+            stableBarrierRef.current = barriers.map(barrier => {
+                if (!barrier) return barrier;
+
+                // Create a plain object with barrier properties for the chart
+                return {
+                    ...barrier,
+                    high: barrier.high,
+                    low: barrier.low,
+                    color: barrier.color,
+                    lineStyle: barrier.lineStyle,
+                    shade: barrier.shade,
+                    shadeColor: barrier.shadeColor,
+                    relative: barrier.relative,
+                    draggable: barrier.draggable,
+                    hidePriceLines: barrier.hidePriceLines,
+                    hideBarrierLine: barrier.hideBarrierLine,
+                    hideOffscreenLine: barrier.hideOffscreenLine,
+                    title: barrier.title,
+                    key: barrier.key,
+                };
+            });
+        }
+    }, [barriers]);
+
+    // Return the stable reference directly without useMemo
+    const stableBarriers = stableBarrierRef.current;
+
+    // Memoize the entire barriers rendering to prevent re-renders when barriers haven't changed
+    const memoizedBarriers = React.useMemo(() => {
+        return stableBarriers.map(({ key, ...barr }, idx) => (
+            <Barrier
+                key={key || `barrier-${idx}`} // eslint-disable-line react/no-array-index-key
+                high={barr.high}
+                low={barr.low}
+                color={barr.color}
+                lineStyle={barr.lineStyle}
+                shade={barr.shade}
+                shadeColor={barr.shadeColor}
+                relative={barr.relative}
+                draggable={barr.draggable}
+                hidePriceLines={barr.hidePriceLines}
+                hideBarrierLine={barr.hideBarrierLine}
+                hideOffscreenLine={barr.hideOffscreenLine}
+                title={barr.title}
+                onChange={barr.onChange}
+                hideOffscreenBarrier={barr.hideOffscreenBarrier}
+                isSingleBarrier={barr.isSingleBarrier}
+                opacityOnOverlap={barr.opacityOnOverlap}
+                showOffscreenArrows={barr.showOffscreenArrows}
+                foregroundColor={barr.foregroundColor}
+            />
+        ));
+    }, [stableBarriers]);
+    // [/AI]
 
     const hasPosition = chartControlsWidgets && position && !isMobile;
     const TopWidgets = topWidgets || defaultTopWidgets;
@@ -133,10 +230,23 @@ const Chart = React.forwardRef((props: TChartProps, ref) => {
         chartAdapter.updateContracts(contracts_array);
     }, [contracts_array]);
 
-    // to always show price info on mobile screen
-    if (isMobile && crosshair.state !== 2) {
-        setCrosshairState(2);
-    }
+    // [AI]
+    // Move conditional logic to useEffect to prevent re-renders during render phase
+    React.useEffect(() => {
+        // to always show price info on mobile screen
+        if (isMobile && crosshair.state !== 2) {
+            setCrosshairState(2);
+        }
+    }, [isMobile, crosshair.state, setCrosshairState]);
+
+    // Memoize the dynamic style object to prevent recreation on every render
+    const chartContainerStyle = React.useMemo(
+        () => ({
+            height: historical && chartContainerHeight && isMobile ? chartContainerHeight - 30 : chartContainerHeight,
+        }),
+        [historical, chartContainerHeight, isMobile]
+    );
+    // [/AI]
 
     return (
         <div
@@ -163,14 +273,7 @@ const Chart = React.forwardRef((props: TChartProps, ref) => {
                     >
                         <div className='ciq-chart-area'>
                             <div className={classNames('ciq-chart', { 'closed-chart': isChartClosed })}>
-                                <RenderInsideChart at='subholder'>
-                                    {barriers.map(({ key, ...barr }, idx) => (
-                                        <Barrier
-                                            key={`barrier-${idx}`} // eslint-disable-line react/no-array-index-key
-                                            {...barr}
-                                        />
-                                    ))}
-                                </RenderInsideChart>
+                                <RenderInsideChart at='subholder'>{memoizedBarriers}</RenderInsideChart>
                                 <RenderInsideChart at='subholder'>
                                     {!isCandle && !isSpline && isHighestLowestMarkerEnabled && <HighestLowestMarker />}
                                 </RenderInsideChart>
@@ -183,16 +286,7 @@ const Chart = React.forwardRef((props: TChartProps, ref) => {
                                         <TopWidgets />
                                     </div>
                                 )}
-                                <div
-                                    className='chartContainer'
-                                    ref={chartContainerRef}
-                                    style={{
-                                        height:
-                                            historical && chartContainerHeight && isMobile
-                                                ? chartContainerHeight - 30
-                                                : chartContainerHeight,
-                                    }}
-                                >
+                                <div className='chartContainer' ref={chartContainerRef} style={chartContainerStyle}>
                                     <Crosshair />
                                 </div>
                                 {enabledNavigationWidget && (
