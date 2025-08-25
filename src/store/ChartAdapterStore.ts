@@ -1,6 +1,6 @@
 import { action, makeObservable, observable, when, runInAction, computed } from 'mobx';
 import moment from 'moment';
-import debounce from 'lodash.debounce';
+import debounce from 'lodash-es/debounce';
 import { TFlutterChart, TLoadHistoryParams, TQuote } from 'src/types';
 import { createChartElement, runChartApp } from 'src/flutter-chart';
 import Painter from 'src/flutter-chart/painter';
@@ -612,7 +612,7 @@ export default class ChartAdapterStore {
                     delta_x = this.getXFromEpoch((barNext.DT as Date).getTime()) - x;
 
                     ratio =
-                        (((date as unknown) as number) - (bar.DT as Date).getTime()) /
+                        ((date as unknown as number) - (bar.DT as Date).getTime()) /
                         ((barNext.DT as Date).getTime() - (bar.DT as Date).getTime());
 
                     if (price) delta_y = barNext.Close - price;
@@ -620,7 +620,7 @@ export default class ChartAdapterStore {
                     delta_x = x - this.getXFromEpoch((barPrev.DT as Date).getTime());
 
                     ratio =
-                        (((date as unknown) as number) - (bar.DT as Date).getTime()) /
+                        ((date as unknown as number) - (bar.DT as Date).getTime()) /
                         ((bar.DT as Date).getTime() - (barPrev.DT as Date).getTime());
 
                     if (price) delta_y = price - barPrev.Close;

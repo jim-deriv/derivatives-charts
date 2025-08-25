@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable react/sort-comp,react/no-multi-comp */
 import React, { ChangeEvent, PropsWithChildren } from 'react';
-import debounce from 'lodash.debounce';
+import debounce from 'lodash-es/debounce';
 
 import classNames from 'classnames';
 import { ArrayElement, TIcon, TNumberPickerValue, TObject } from 'src/types';
@@ -133,7 +133,7 @@ export const Slider = ({ min = 1, max = 10, step = 1, value, onChange }: TSlider
 
     const handleChange = React.useCallback(
         (el: ChangeEvent<HTMLInputElement>) => {
-            let value = (el.currentTarget as HTMLInputElement).value;
+            const value = (el.currentTarget as HTMLInputElement).value;
             if (value.length > 0) {
                 onChange(Number(value));
             }

@@ -8,7 +8,7 @@ import {
     TLayout,
     TSettings,
 } from 'src/types';
-import debounce from 'lodash.debounce';
+import debounce from 'lodash-es/debounce';
 import { AuditDetailsForExpiredContract, ProposalOpenContract } from '@deriv/api-types';
 import { isDeepEqual } from 'src/utils/object';
 import LZString from 'lz-string';

@@ -1,7 +1,7 @@
 import { action, computed, observable, when, makeObservable } from 'mobx';
 import Context from 'src/components/ui/Context';
 import { TDrawingToolConfig, TIcon, TSettingsParameter } from 'src/types';
-import set from 'lodash.set';
+import set from 'lodash-es/set';
 import { capitalize, hexToInt, intToHexColor } from 'src/components/ui/utils';
 import MainStore from '.';
 import { defaultdrawToolsConfigs, getDefaultDrawingConfig, getDrawTools } from '../Constant';
@@ -244,7 +244,7 @@ export default class DrawToolsStore {
     clearAll() {
         this.activeToolsGroup = [];
         window.flutterChart?.drawingTool.clearDrawingTool();
-        //this.mainStore.state.saveDrawings();
+        // this.mainStore.state.saveDrawings();
         logEvent(LogCategories.ChartControl, LogActions.DrawTools, 'Clear All');
     }
 

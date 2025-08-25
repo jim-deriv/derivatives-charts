@@ -1,6 +1,6 @@
 import { action, observable, reaction, when, makeObservable } from 'mobx';
 import React from 'react';
-import set from 'lodash.set';
+import set from 'lodash-es/set';
 import Context from 'src/components/ui/Context';
 import { getUniqueId, hexToInt } from 'src/components/ui/utils';
 import { TActiveItem, TIndicatorConfig, TSettingsParameter } from 'src/types';
