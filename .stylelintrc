@@ -1,4 +1,5 @@
 {
+    "customSyntax": "postcss-scss",
     "plugins": [
         "stylelint-no-unsupported-browser-features"
     ],
@@ -120,7 +121,7 @@
         "string-quotes": "single",
         "time-min-milliseconds": 100,
         "unit-case": "lower",
-        "unit-whitelist": [
+        "unit-allowed-list": [
             "fr",
             "px",
             "em",

@@ -3,7 +3,7 @@
 html {
     font-size: 62.5%; /* 1rem = 10px */
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); //stylelint-disable-line number-max-precision
-    text-rendering: optimizeLegibility !important; //stylelint-disable-line plugin/no-unsupported-browser-features
+    text-rendering: optimizelegibility !important; //stylelint-disable-line plugin/no-unsupported-browser-features
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
 }
