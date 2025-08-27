@@ -37,7 +37,7 @@ export class Translation {
     translate(...args: [string, Record<string, string>]) {
         const curr_lang = lang_map[this.lang];
         const key = args[0].trim();
-        const key_with_quotation = key.replace(/"/gi, '\\"'); /* eslint-disable-line */
+        const key_with_quotation = key.replace(/\\/g, '\\\\').replace(/"/g, '\\"'); /* eslint-disable-line */
         let translated = key;
         let has_quotation = false;
 

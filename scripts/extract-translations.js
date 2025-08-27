@@ -18,7 +18,7 @@ const parseCode = source => espree.parse(source, {
 
 function esc(s) {
     if (!s) return s;
-    return s.replace(/"/g, '\\"');
+    return s.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
 }
 
 const extractTextFromFunctions = (...method_names) => (parsed_code) => {
@@ -101,7 +101,7 @@ function extractOutPot(source, translationDir) {
 
 function updateTranslatedFile(filename, source, translated) {
 
-    const new_translated_content = {}
+    const new_translated_content = {};
 
     Object.keys(source).forEach(key=> {
         new_translated_content[key] = translated[key] || '';
@@ -120,7 +120,7 @@ function updateTranslatedFile(filename, source, translated) {
 function updateOtherLanguages(source, translationDir) {
 
     try {
-        const filenames = fs.readdirSync(translationDir)
+        const filenames = fs.readdirSync(translationDir);
         const validFilenames = (filenames || []).filter(file => (file.split('.').pop() === 'json' && file !== 'messages.json'));
 
         validFilenames.forEach(filename => {
@@ -129,13 +129,13 @@ function updateOtherLanguages(source, translationDir) {
             updateTranslatedFile(translationDir + filename, source, translated);
         });
     } catch (err) {
-      console.error('ERROR: problem reading translation direcotry, Perhaps a permission issue exist.')
+      console.error('ERROR: problem reading translation directory, Perhaps a permission issue exist.');
       console.log(`ERROR: {err}`);
       console.log(err);
     }
 }
 
-const jsFile = process.argv[2];
+    const jsFile = process.argv[2];
 if (jsFile) {
     console.log('Extracting translations from', jsFile, '...');
     const s = fs.readFileSync(jsFile).toString();
