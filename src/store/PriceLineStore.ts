@@ -2,7 +2,7 @@ import EventEmitter from 'event-emitter-es6';
 import { action, computed, observable, when, makeObservable, reaction, IReactionDisposer } from 'mobx';
 import Context from 'src/components/ui/Context';
 import MainStore from '.';
-import { ARROW_HEIGHT, DIRECTIONS, makeElementDraggable } from '../utils';
+import { ARROW_HEIGHT, DIRECTIONS, lerp, makeElementDraggable } from '../utils';
 
 const LINE_OFFSET_HEIGHT = 4;
 const LINE_OFFSET_HEIGHT_HALF = LINE_OFFSET_HEIGHT >> 1;
@@ -84,86 +84,22 @@ export default class PriceLineStore {
             }
         );
 
-        this.mainStore.chartAdapter.painter.registerCallback(this.drawBarrier);
+        this.mainStore.chartAdapter.painter.registerCallback(this.drawBarrier, true);
     };
 
-    // Complete barrier freeze system - no jumping allowed
-    _lastCalculatedTop: number | null = null;
-    _lastQuoteForCalculation: number | null = null;
-    _lastTickPercent: number | null = null;
-    _updateCount = 0;
-    _lastUpdateTime = 0;
-    _isPositionFrozen = false;
-
-    // Centralized method to update barrier position - completely frozen approach
-    _updateBarrierPosition(newTop: number, _source: string, quote?: number) {
-        this._updateCount++;
-
-        // More balanced thresholds - prevent micro-movements but allow proper updates
-        const threshold = this.relative ? 5 : 3; // Reasonable thresholds for stability
-        const now = Date.now();
-        const timeSinceLastUpdate = now - this._lastUpdateTime;
-
-        // For relative barriers, only allow updates if:
-        // 1. It's the initial position (null)
-        // 2. User is dragging
-        // 3. There's been meaningful movement (5+ pixels)
-        // 4. At least 100ms has passed since last update (more responsive)
-        if (this.relative && this._lastCalculatedTop !== null && !this.isDragging) {
-            if (timeSinceLastUpdate < 100 || Math.abs(newTop - this._lastCalculatedTop) < threshold) {
-                return false;
-            }
-        }
-
-        // Only update if it's initial position or meets extreme threshold
-        if (
-            this._lastCalculatedTop === null ||
-            Math.abs(newTop - this._lastCalculatedTop) > threshold ||
-            this.isDragging
-        ) {
-            this.__top = newTop;
-            if (this._line) {
-                this._line.style.transform = `translateY(${newTop - 13}px)`;
-            }
-            this._lastCalculatedTop = newTop;
-            this._lastUpdateTime = now;
-            if (quote !== undefined) {
-                this._lastQuoteForCalculation = quote;
-            }
-            return true;
-        }
-        return false;
-    }
-
-    drawBarrier(_currentTickPercent: number) {
+    drawBarrier(currentTickPercent: number) {
         if (this.isDragging) return;
 
         const quotes = this.mainStore.chart.feed?.quotes;
+
         if (!quotes || quotes.length < 2) return;
 
         const currentQuote = this._getPrice(quotes[quotes.length - 1].Close);
+        const previousQuote = this._getPrice(quotes[quotes.length - 2].Close);
 
-        if (this.relative) {
-            // For relative barriers, use smaller quote change threshold (0.1% instead of 1%)
-            if (
-                this._lastQuoteForCalculation === null ||
-                Math.abs(currentQuote - this._lastQuoteForCalculation) > Math.abs(currentQuote * 0.001)
-            ) {
-                const newTop = this._calculateTop(currentQuote) as number;
-                if (newTop !== undefined) {
-                    this._updateBarrierPosition(newTop, 'drawBarrier-relative', currentQuote);
-                }
-            }
-        } else if (
-            this._lastQuoteForCalculation === null ||
-            Math.abs(currentQuote - this._lastQuoteForCalculation) > 0.001
-        ) {
-            // For absolute barriers, use smaller threshold for better responsiveness
-            const newTop = this._calculateTop(currentQuote) as number;
-            if (newTop !== undefined) {
-                this._updateBarrierPosition(newTop, 'drawBarrier-absolute', currentQuote);
-            }
-        }
+        const lerpQuote = lerp(previousQuote, currentQuote, currentTickPercent);
+
+        this.top = this._calculateTop(lerpQuote) as number;
     }
 
     destructor() {
@@ -183,7 +119,7 @@ export default class PriceLineStore {
         if (this._line && subholder) {
             makeElementDraggable(this._line, subholder, {
                 onDragStart: (e: MouseEvent) => exitIfNotisDraggable(e, this._startDrag),
-                onDrag: (e: MouseEvent) => exitIfNotisDraggable(e, event => this._dragLine(event, subholder)),
+                onDrag: (e: MouseEvent) => exitIfNotisDraggable(e, e1 => this._dragLine(e1, subholder)),
                 onDragReleased: (e: MouseEvent) => exitIfNotisDraggable(e, this._endDrag),
             });
         }
@@ -349,7 +285,7 @@ export default class PriceLineStore {
 
         let top = this._locationFromPrice(quote || +this.realPrice);
 
-        const height = (window as any).flutterChartElement?.clientHeight || 0;
+        const height = window.flutterChartElement?.clientHeight || 0;
 
         // keep line on chart even if price is off viewable area:
         if (top < 0) {
@@ -389,22 +325,21 @@ export default class PriceLineStore {
         return Math.round(top) | 0;
     };
 
-    // Override the top setter to use centralized stability
+    // Manually update the top to improve performance.
+    // We don't pay for react reconciler and mobx observable tracking in animation frames.
     set top(v) {
-        this._updateBarrierPosition(v, 'direct-setter');
+        this.__top = v;
+        if (this._line) {
+            this._line.style.transform = `translateY(${this.top - 13}px)`;
+        }
     }
-
     get top() {
         return this.__top;
     }
 
-    // Update _draw method to use centralized stability
     _draw = () => {
         if (this.visible && this._line) {
-            const newTop = this._calculateTop() as number;
-            if (newTop !== undefined) {
-                this._updateBarrierPosition(newTop, '_draw');
-            }
+            this.top = this._calculateTop() as number;
         }
     };
 
