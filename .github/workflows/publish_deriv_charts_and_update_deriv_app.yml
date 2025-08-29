@@ -53,6 +53,8 @@ jobs:
 
     update_chart_version_in_derivatives_trader:
         runs-on: Ubuntu-latest
+        env:
+          HUSKY: 0  # Disable Husky hooks
         permissions:
             pull-requests: write
         needs: [build_and_publish_derivatives_charts]
