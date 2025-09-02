@@ -8,8 +8,9 @@ declare var __webpack_public_path__: string;
 
 declare module '*.scss';
 declare module '*.svg' {
-    const content: React.SVGAttributes<SVGElement>;
-    export default content;
+    import React from 'react';
+    const ReactComponent: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+    export default ReactComponent;
 }
 
 interface Window {

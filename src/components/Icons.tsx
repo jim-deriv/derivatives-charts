@@ -281,19 +281,15 @@ import DrawToolsRectangle from '../../sass/icons/draw-tools/ic-rectangle.svg';
 import DrawToolsTrend from '../../sass/icons/draw-tools/ic-trend.svg';
 import DrawToolsVertical from '../../sass/icons/draw-tools/ic-vertical.svg';
 
-export const Wrapper = (SvgLogo: React.SVGAttributes<SVGElement>) => {
+export const Wrapper = (SvgComponent: React.ComponentType<React.SVGProps<SVGSVGElement>>): TIcon => {
     const InnerWrapper = (props: TIconProps) => {
-        let { className, 'tooltip-title': tooltip, ...p } = props; // eslint-disable-line prefer-const
-        className = `ic-icon ${className || ''}`;
-        const vb = SvgLogo.viewBox?.split(' ').slice(2) || [];
+        const { className, 'tooltip-title': tooltip, ...p } = props;
+        const iconClassName = `ic-icon ${className || ''}`;
 
         return (
-            <span className={className} tooltip-title={tooltip} {...p}>
-                <svg width={vb[0]} height={vb[1]}>
-                    <use
-                        xlinkHref={__webpack_public_path__ + (SvgLogo as any).url /* eslint-disable-line no-undef */}
-                    />
-                </svg>
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            <span className={iconClassName} {...(tooltip ? { 'tooltip-title': tooltip } : {})} {...p}>
+                <SvgComponent />
                 {tooltip && (
                     <>
                         <br />
@@ -637,6 +633,7 @@ const createCompositeIcon = (A: TIcon, B: TIcon, icId: string) => {
     const FC = (props: { className?: string }) => {
         const { className, ...p } = props;
         return (
+            // eslint-disable-next-line react/jsx-props-no-spreading
             <span className={`${icId} ${className}`} {...p}>
                 <A />
                 <B />
