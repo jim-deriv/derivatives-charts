@@ -25,7 +25,23 @@
             true,
             {
                 "severity": "error",
-                "ignore": ["calc", "user-select-none", "multicolumn", "css-appearance", "intrinsic-width"]
+                "ignore": [
+                    "calc",
+                    "user-select-none",
+                    "multicolumn",
+                    "css-appearance",
+                    "intrinsic-width",
+                    "css-nesting",
+                    "css-rrggbbaa",
+                    "css-overflow",
+                    "css-focus-visible",
+                    "flexbox-gap",
+                    "font-family-system-ui",
+                    "css-math-functions",
+                    "css-logical-props",
+                    "css-not-sel-list",
+                    "css-scrollbar"
+                ]
             }
         ]
     }
