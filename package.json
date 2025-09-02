@@ -179,6 +179,7 @@
     },
     "overrides": {
         "braces": "^3.0.3",
+        "tmp": "0.2.4",
         "webpack-bundle-analyzer": {
             "ws": "^8.18.2"
         }
