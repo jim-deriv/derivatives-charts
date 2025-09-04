@@ -84,7 +84,7 @@ export default class PriceLineStore {
             }
         );
 
-        this.mainStore.chartAdapter.painter.registerCallback(this.drawBarrier, true);
+        this.mainStore.chartAdapter.painter.registerCallback(this.drawBarrier);
     };
 
     drawBarrier(currentTickPercent: number) {
