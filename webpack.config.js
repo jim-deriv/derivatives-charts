@@ -4,7 +4,6 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const production = process.env.NODE_ENV === 'production';
@@ -53,26 +52,26 @@ const config = {
                 test: /\.svg$/,
                 use: [
                     {
-                        loader: 'svg-sprite-loader',
+                        loader: '@svgr/webpack',
                         options: {
-                            extract: true,
-                            spriteFilename: 'sprite-[hash:6].smartcharts.svg',
-                            esModule: false,
-                        },
-                    },
-                    {
-                        loader: 'svgo-loader',
-                        options: {
-                            plugins: [
-                                {
-                                    name: 'removeUselessStrokeAndFill',
-                                    removeUselessStrokeAndFill: false,
-                                },
-                                {
-                                    name: 'removeUnknownsAndDefaults',
-                                    removeUnknownsAndDefaults: false,
-                                },
-                            ],
+                            typescript: true,
+                            exportType: 'default',
+                            svgoConfig: {
+                                plugins: [
+                                    {
+                                        name: 'removeUselessStrokeAndFill',
+                                        params: {
+                                            removeUselessStrokeAndFill: false,
+                                        },
+                                    },
+                                    {
+                                        name: 'removeUnknownsAndDefaults',
+                                        params: {
+                                            removeUnknownsAndDefaults: false,
+                                        },
+                                    },
+                                ],
+                            },
                         },
                     },
                 ],
@@ -169,7 +168,6 @@ const config = {
         }),
         new MiniCssExtractPlugin({ filename: 'smartcharts.css' }),
         new StyleLintPlugin(),
-        new SpriteLoaderPlugin(),
         new CopyWebpackPlugin({
             patterns: [
                 {
