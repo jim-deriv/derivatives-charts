@@ -5,6 +5,8 @@ on:
 jobs:
     build_and_publish_derivatives_charts:
         runs-on: Ubuntu-latest
+        env:
+          HUSKY: 0  # Disable Husky hooks
         permissions:
             contents: write
         steps:
